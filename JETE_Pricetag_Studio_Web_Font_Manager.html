@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><title>JETE Pricetag Studio — Font Manager Edition</title>
+<style>
+:root{--orange:#ff8501;--bg:#101216;--panel:#181b20;--panel2:#21252b;--line:#343840;--muted:#9a9fa8;--text:#f5f5f4;--danger:#fb7777;--green:#69d7ae;--shadow:0 14px 36px rgba(0,0,0,.22)}*{box-sizing:border-box}html,body{padding:0;margin:0;background:var(--bg);color:var(--text);font:14px/1.45 'Plus Jakarta Sans',Inter,'Segoe UI',Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}h1,h2,h3,p{margin:0}input,select,textarea{background:#111418;color:#f6f6f7;border:1px solid var(--line);border-radius:9px;padding:9px 10px;outline:none;max-width:100%}input:focus,select:focus,textarea:focus{border-color:var(--orange);box-shadow:0 0 0 2px #ff850122}input[type=color]{padding:2px;height:36px;width:48px}input[type=checkbox]{accent-color:var(--orange);width:15px;height:15px}input[type=file]{display:none}input[type=number]{min-width:0}textarea{resize:vertical;line-height:1.5}label{font-size:12px;color:#c3c6ca;font-weight:600;display:block}.row{display:flex;align-items:center;gap:9px}.between{justify-content:space-between}.wrap{flex-wrap:wrap}.muted{color:var(--muted)}.tiny{font-size:11px}.small{font-size:12px}.bold{font-weight:700}.pill{font-size:10px;font-weight:750;border:1px solid #ffffff24;border-radius:100px;padding:3px 8px;color:#b9bdc3}.pill.ok{border-color:#265747;color:#78ddba}.pill.warn{border-color:#6a4721;color:#ffbd71}.btn{border:1px solid #464b55;background:#292d34;color:#fff;border-radius:9px;padding:9px 12px;font-weight:700;transition:.1s}.btn:hover{background:#343941}.btn.orange{background:var(--orange);border-color:var(--orange);color:#14100b}.btn.orange:hover{background:#ffa53b}.btn.ghost{background:transparent;border-color:var(--line)}.btn.small{padding:6px 9px;font-size:12px}.btn.danger{border-color:#783e40;color:#ffb9bc}.app{display:grid;grid-template-columns:260px minmax(410px,1fr) 335px;min-height:100vh}.sidebar{border-right:1px solid var(--line);background:#171a1f;display:flex;flex-direction:column;min-height:100vh}.brand{padding:20px 18px 18px;border-bottom:1px solid var(--line)}.brandmark{font-family:Arial,sans-serif;color:var(--orange);font-size:28px;font-weight:1000;font-style:italic;letter-spacing:-1.4px}.brand h1{font-size:14px;letter-spacing:.8px}.brand p{margin-top:4px;font-size:11px;color:var(--muted)}.aside-sec{padding:16px 13px}.aside-label{font-size:10px;color:#969aa3;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;margin:0 4px 10px}.group-list{display:flex;flex-direction:column;gap:5px;max-height:calc(100vh - 250px);overflow:auto}.group{width:100%;text-align:left;color:#dee1e3;border:1px solid transparent;background:transparent;border-radius:10px;padding:10px 11px;display:flex;align-items:center;justify-content:space-between;gap:8px}.group:hover{background:#282c33}.group.active{border-color:#ff850166;background:#ff850120}.group-name{font-size:12px;font-weight:750;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.group-sub{font-size:11px;color:#969ca5;margin-top:2px}.group-index{font-size:11px;color:var(--orange);font-variant-numeric:tabular-nums}.aside-bottom{margin-top:auto;border-top:1px solid var(--line);padding:15px}.aside-bottom .stat{font-weight:800;font-size:19px}.main{min-width:0;display:flex;flex-direction:column}.topbar{display:flex;align-items:center;justify-content:space-between;padding:15px 21px;border-bottom:1px solid var(--line);gap:10px}.topbar h2{font-size:17px;letter-spacing:-.35px}.topbar .sub{font-size:11px;color:var(--muted)}.tabs{padding:0 20px;display:flex;align-items:center;gap:5px;border-bottom:1px solid var(--line)}.tab{border:none;background:transparent;color:#aeb2ba;font-size:12px;font-weight:750;padding:13px 12px;border-bottom:2px solid transparent}.tab.active{color:#fff;border-color:var(--orange)}.content{padding:20px;display:flex;flex-direction:column;gap:16px}.studio{display:flex;flex-direction:column;gap:14px}.preview-shell{min-height:350px;display:flex;flex-direction:column;align-items:stretch;justify-content:center;background:radial-gradient(ellipse at center,#30343b 0%,#202329 60%,#191c22 100%);border:1px solid var(--line);border-radius:16px;overflow:hidden}.preview-head{padding:12px 16px;color:#cbd0d6;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12;font-size:11px}.preview-inner{display:flex;align-items:center;justify-content:center;min-height:310px;padding:30px 22px}.preview-inner svg{width:auto;height:auto;max-width:100%;max-height:430px;box-shadow:0 15px 35px #0009}.preview-inner .error{font-size:13px;color:#ffb3b3;max-width:440px;white-space:pre-wrap}.panel{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px}.panel h3{font-size:13px;margin-bottom:12px}.panel p{font-size:12px;color:var(--muted)}.inspector{border-left:1px solid var(--line);padding:20px 17px;background:#191b21;min-width:0}.inspector h2{font-size:16px;letter-spacing:-.4px;margin-bottom:6px}.inspector section{margin-top:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.fields2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fields3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.flex{flex:1}.big-number{font-variant-numeric:tabular-nums}.inspector .field+.field{margin-top:10px}.inspector .row{margin-top:10px}.color-row{display:grid;grid-template-columns:1fr 56px;gap:10px;align-items:center;margin:8px 0}.color-row label{font-size:12px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}.data-table{border-collapse:collapse;width:100%;font-size:11px;min-width:610px}.data-table th{background:#272a31;text-align:left;color:#bcbfc5;font-size:10px;padding:11px 8px;font-weight:800;white-space:nowrap}.data-table td{padding:5px;border-top:1px solid #30343a}.data-table input{background:transparent;border:1px solid transparent;padding:7px 5px;border-radius:5px;width:100%;font-size:11px}.data-table input:hover,.data-table input:focus{border-color:#646b75;background:#181a20}.data-table .act{width:50px;text-align:center}.data-table .numeric{min-width:86px}.data-table .name{min-width:160px}.data-table button{font-size:13px;padding:4px 7px;border:1px solid #4a3335;border-radius:7px;background:#402326;color:#ffd0d0}.drop{border:1px dashed #676c74;border-radius:12px;padding:22px;text-align:center;background:#23262d}.drop.drag{border-color:var(--orange);background:#ff850113}.drop strong{display:block;font-size:13px;margin-bottom:4px}.drop p{font-size:12px;color:var(--muted)}.hint{font-size:11px;color:#b3b7bd;line-height:1.5}.help{font-size:11px;background:#292724;border-left:3px solid var(--orange);padding:10px 13px;color:#dfd5c9;border-radius:8px;white-space:pre-wrap}.success{color:var(--green)}.warning{color:#ffb872}.import-area{display:flex;flex-direction:column;gap:12px}.import-area textarea{min-height:168px}.chip-row{display:flex;flex-wrap:wrap;gap:8px}.notice{display:none;white-space:pre-wrap;border-radius:10px;padding:12px 14px;font-size:12px;border:1px solid #684325;background:#382a1d;color:#ffcf93}.notice.visible{display:block}.footer-actions{display:flex;flex-wrap:wrap;gap:8px}.export-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.export-option{border:1px solid #3e444b;background:#22262c;border-radius:12px;padding:16px;text-align:left;display:flex;flex-direction:column;gap:8px}.export-option:hover{border-color:#ff8501}.export-option strong{font-size:13px}.export-option span{font-size:11px;color:#a8adb6}.export-option .symbol{font-size:22px;color:var(--orange)}.modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:20;padding:18px}.modal.on{display:flex}.modal-body{max-width:580px;width:100%;padding:22px;background:#202329;border:1px solid #4d515a;border-radius:16px}.modal-body h2{font-size:17px;margin-bottom:12px}.modal-body textarea{width:100%;min-height:180px}.modal-body .row{margin-top:14px}.toast{position:fixed;right:20px;bottom:20px;background:#262c30;color:#fff;border:1px solid #505a57;border-left:3px solid #71d3ab;padding:12px 16px;border-radius:10px;box-shadow:var(--shadow);max-width:420px;z-index:40;display:none;font-size:12px}.toast.on{display:block}.tab-panel{display:none}.tab-panel.active{display:block}#printArea{display:none}
+@media(max-width:1180px){.app{grid-template-columns:210px minmax(330px,1fr)}.inspector{grid-column:2;border-top:1px solid var(--line);border-left:0}.sidebar{grid-row:span 2}.group-list{max-height:calc(100vh - 250px)}}@media(max-width:700px){.app{display:flex;flex-direction:column}.sidebar{min-height:auto;border-right:0}.brand{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brandmark{font-size:24px}.brand p{display:none}.aside-sec{padding:10px}.aside-label{display:none}.group-list{flex-direction:row;max-height:none;overflow:auto}.group{min-width:125px;max-width:160px}.aside-bottom{display:none}.topbar{padding:14px}.tabs{padding:0 9px}.content{padding:12px}.preview-shell{min-height:270px}.preview-inner{min-height:240px;padding:17px}.preview-inner svg{max-height:350px}.inspector{padding:16px}.export-grid{grid-template-columns:1fr 1fr}}
+@media print{@page{margin:0}html,body{background:white!important;margin:0;padding:0}.app,.toast,.modal{display:none!important}#printArea{display:block!important;width:100%}.print-page{box-sizing:border-box;page-break-after:always;break-after:page;overflow:hidden;margin:0!important;padding:0!important}.print-page svg{display:block;width:100%;height:100%;margin:0}.print-page:last-child{break-after:auto}}
+
+.font-manager-dialog{max-width:760px;max-height:90vh;overflow:auto}
+.font-library-list{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow:auto;margin-top:12px}
+.font-record{background:#191c21;border:1px solid #3a3e45;border-radius:10px;padding:10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+.font-record .font-sample{font-size:19px;line-height:1.35;margin:4px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.font-record .font-filename{font-size:12px;font-weight:750;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.font-record .font-meta{font-size:10px;color:#969ca5}
+.font-select{font-size:12px;width:100%}
+.font-status-bad{color:#ffadad}.font-status-good{color:#7be0b5}
+.font-drop.drag{background:#ff85011b;border-color:#ff8501}
+</style></head><body>
+<div class="app"><aside class="sidebar"><div class="brand"><div><div class="brandmark">JETE</div><h1>PRICETAG STUDIO <span class="pill">WEB</span></h1><p>Versi browser dari Script Illustrator 1.3</p></div></div><div class="aside-sec"><div class="row between" style="margin-bottom:10px"><div class="aside-label" style="margin:0">ANTREAN PRICETAG</div><button id="addGroup" class="btn small ghost" title="Tambah grup baru">+ Grup</button></div><div class="group-list" id="groupList"></div></div><div class="aside-bottom"><div class="row between"><div><div class="stat" id="groupCount">0</div><div class="tiny muted">Pricetag</div></div><div><div class="stat" id="productCount">0</div><div class="tiny muted">Baris produk</div></div></div><p class="tiny muted" style="margin-top:13px">Semua proses berjalan di browser. Data tidak dikirim ke server.</p></div></aside>
+<main class="main"><div class="topbar"><div><h2>Pricetag Generator <span class="pill ok" style="vertical-align:middle">Font Manager</span></h2><p class="sub">Ukuran fleksibel · Auto Fit · Siap cetak</p></div><div class="row"><span class="pill ok" id="modePill">Offline ready</span><button class="btn orange small" id="saveProjectTop">Simpan proyek</button></div></div><div class="tabs"><button class="tab active" data-tab="data">01 &nbsp; Produk</button><button class="tab" data-tab="design">02 &nbsp; Desain</button><button class="tab" data-tab="export">03 &nbsp; Ekspor</button></div>
+<div class="content"><div id="notice" class="notice"></div><div class="studio"><div class="preview-shell"><div class="preview-head"><span id="previewTitle">Pratinjau pricetag</span><span id="previewSize">9,5 × 6,5 cm</span></div><div class="preview-inner" id="preview"><div class="muted">Pilih grup untuk menampilkan pratinjau.</div></div></div><div class="row between wrap"><div class="row wrap"><span class="pill" id="countPill">0 produk</span><span class="pill" id="columnsPill">Auto layout</span><span class="pill" id="pricePill">Festive</span></div><span class="tiny muted" id="previewWarnings"></span></div></div>
+<div class="tab-panel active" id="panel-data"><div class="panel import-area"><div class="row between wrap"><div><h3>Impor data produk</h3><p>Tempel tabel Excel, CSV/TSV, daftar harga chat, atau impor file Excel.</p></div><div class="row wrap"><label class="btn small ghost" style="color:white;cursor:pointer">Pilih file<input id="inputFile" type="file" accept=".xlsx,.csv,.tsv,.txt,.json,.jps"></label><button class="btn small ghost" id="showExample">Isi contoh</button></div></div><textarea id="rawInput" placeholder="Tempel data dengan header: Grup | Kategori | Produk | Deskripsi | Normal | Store | Festive\n\nAtau ketik seperti:\nKelompok 1\nB10 10.000mAh: Rp 579.900 Rp 319.900\nB11 10.000mAh: Rp 599.900 Rp 399.900"></textarea><div class="row wrap"><button id="parseData" class="btn orange">Baca & Kelompokkan</button><button id="downloadTemplate" class="btn ghost">Template CSV</button><span class="hint">Harga yang meragukan akan dilaporkan sebelum ekspor.</span></div></div><div class="panel"><div class="row between wrap" style="margin-bottom:12px"><div><h3 id="tableTitle" style="margin-bottom:2px">Produk dalam grup</h3><p>Ubah nama, deskripsi, harga normal dan harga promo langsung di tabel.</p></div><div class="row wrap"><button id="addProduct" class="btn small ghost">+ Produk</button><button id="moveGroupUp" class="btn small ghost" title="Pindah grup ke atas">↑ Grup</button><button id="moveGroupDown" class="btn small ghost" title="Pindah grup ke bawah">↓ Grup</button><button id="deleteGroup" class="btn small danger">Hapus grup</button></div></div><div class="table-wrap"><table class="data-table"><thead><tr><th>#</th><th>Nama produk</th><th>Deskripsi</th><th>Normal (Rp)</th><th>Store (Rp)</th><th>Festive (Rp)</th><th></th></tr></thead><tbody id="productRows"></tbody></table></div></div></div>
+<div class="tab-panel" id="panel-design"><div class="panel"><h3>Pengaturan kanvas & desain</h3><p>Pengaturan pada panel kanan memengaruhi seluruh pricetag di antrean. Pratinjau mengikuti data dan ukuran aktual.</p><div class="chip-row" style="margin-top:14px"><span class="pill">Default 95 × 65 mm</span><span class="pill">1 / 2 kolom</span><span class="pill">Background #FF8501</span><span class="pill">Teks Auto Fit</span></div></div></div>
+<div class="tab-panel" id="panel-export"><div class="panel"><h3>Ekspor hasil desain</h3><p>SVG bersifat vektor dan dapat dibuka di Illustrator. PNG cocok untuk pratinjau; PDF diperoleh melalui menu Print / Save as PDF dari browser.</p><div class="export-grid" style="margin-top:16px"><button class="export-option" id="exportSVG"><span class="symbol">◇</span><strong>SVG · Pricetag dipilih</strong><span>Vektor, teks dan objek tetap dapat diedit di software desain.</span></button><button class="export-option" id="exportPNG"><span class="symbol">▣</span><strong>PNG · Pricetag dipilih</strong><span>Resolusi cetak 300 dpi sesuai ukuran kanvas.</span></button><button class="export-option" id="exportZip"><span class="symbol">▤</span><strong>ZIP · Semua pricetag</strong><span>Semua SVG dalam satu arsip, bersama CSV antrean.</span></button><button class="export-option" id="printPDF"><span class="symbol">▥</span><strong>Cetak / Save as PDF</strong><span>Satu halaman per pricetag, ukuran fisik sesuai kanvas.</span></button></div><div class="row wrap" style="margin-top:14px"><button class="btn ghost" id="exportCSV">Simpan antrean CSV</button><button class="btn ghost" id="saveProject">Simpan proyek JSON</button><label class="btn ghost" style="color:white;cursor:pointer">Buka proyek / preset<input id="projectFile" type="file" accept=".json,.jps"></label></div><p style="margin-top:12px">Untuk cetak tanpa perubahan skala, pilih <b>Actual Size / 100%</b> pada dialog cetak. Pastikan pratinjau dan file akhir diperiksa sebelum produksi massal.</p></div></div></div></main>
+<aside class="inspector"><div class="row between"><div><h2>Pengaturan</h2><p class="muted tiny">Berlaku untuk seluruh antrean</p></div><button id="resetDesign" class="btn small ghost">Reset</button></div><section><h3 style="margin-bottom:12px">Kanvas</h3><div class="field"><label>Ukuran preset</label><select id="preset"><option value="95x65">JETE — 9,5 × 6,5 cm</option><option value="65x95">Portrait — 6,5 × 9,5 cm</option><option value="100x100">Square — 10 × 10 cm</option><option value="140x70">Landscape — 14 × 7 cm</option><option value="210x148">A5 — 21 × 14,8 cm</option><option value="custom">Kustom</option></select></div><div class="fields2" style="margin-top:10px"><div class="field"><label>Lebar (cm)</label><input id="widthCm" type="number" min="3" max="100" step="0.1"></div><div class="field"><label>Tinggi (cm)</label><input id="heightCm" type="number" min="3" max="100" step="0.1"></div></div><div class="fields2" style="margin-top:10px"><div class="field"><label>Layout kolom</label><select id="columns"><option value="0">Otomatis</option><option value="1">1 kolom</option><option value="2">2 kolom</option></select></div><div class="field"><label>Maks. produk / tag</label><input id="maxProducts" type="number" min="2" max="500"></div></div><div class="fields2" style="margin-top:10px"><div class="field"><label>Harga jual</label><select id="price"><option value="festive">Festive / Promo</option><option value="store">Store</option></select></div><div class="field"><label>Bleed (mm)</label><select id="bleed"><option value="0">0 mm</option><option value="2">2 mm</option><option value="3">3 mm</option></select></div></div></section>
+<section><h3 style="margin-bottom:11px">Identitas & logo</h3><div class="field"><label>Judul grup aktif</label><input id="groupTitle" placeholder="Misal: Powerbank"></div><div class="field" style="margin-top:10px"><label>File logo (PNG / JPG / SVG)</label><label class="btn ghost small" style="text-align:center;color:white;cursor:pointer"><span id="logoLabel">Pilih logo</span><input id="logoFile" type="file" accept=".svg,.png,.jpg,.jpeg,.webp"></label></div><div class="fields2" style="margin-top:10px"><div class="field"><label>Posisi</label><select id="logoPosition"><option value="top-left">Kiri atas</option><option value="top-center">Tengah atas</option><option value="top-right">Kanan atas</option><option value="bottom-left">Kiri bawah</option><option value="bottom-center">Tengah bawah</option><option value="bottom-right">Kanan bawah</option><option value="custom">Bebas (X/Y)</option></select></div><div class="field"><label>Lebar logo (cm)</label><input id="logoWidth" type="number" step="0.1" min="0.01"></div></div><div class="fields2" style="margin-top:10px"><div class="field"><label>X logo (cm)</label><input id="logoX" type="number" step="0.1" min="0"></div><div class="field"><label>Y logo (cm)</label><input id="logoY" type="number" step="0.1" min="0"></div></div><div class="row" style="margin-top:12px"><input id="draft" type="checkbox"><label for="draft">Mode draf tanpa logo asli</label></div><p class="hint" id="logoHint" style="margin-top:6px">Untuk hasil final, unggah logo asli.</p></section>
+<section><h3 style="margin-bottom:10px">Tipografi & Font Manager <span class="pill" id="fontCount">0 font impor</span></h3>
+<div class="field"><label>Font nama produk</label><select id="font" class="font-select"></select></div>
+<div class="field" style="margin-top:8px"><label>Font deskripsi</label><select id="fontDesc" class="font-select"></select></div>
+<div class="field" style="margin-top:8px"><label>Font harga normal & promo</label><select id="fontPrice" class="font-select"></select></div>
+<div class="field" style="margin-top:8px"><label>Font judul grup & footer</label><select id="fontHeader" class="font-select"></select></div>
+<div class="row wrap" style="margin-top:11px"><label class="btn orange small" style="color:#17120c;cursor:pointer">+ Impor banyak font<input id="fontFiles" type="file" multiple accept=".ttf,.otf,.woff,.woff2,.zip"></label><button class="btn small ghost" id="openFontManager">Kelola font</button></div>
+<p class="hint" id="fontStatus" style="margin-top:9px">Impor TTF, OTF, WOFF, WOFF2, atau ZIP berisi font. Font disimpan di browser bila didukung.</p>
+<div class="fields2" style="margin-top:10px"><div class="fields2" style="margin-top:10px"><div class="field"><label>Nama 1 kolom (pt)</label><input id="nameSizeOne" type="number" step="0.1"></div><div class="field"><label>Deskripsi 1 kolom</label><input id="descSizeOne" type="number" step="0.1"></div><div class="field"><label>Nama 2 kolom (pt)</label><input id="nameSizeTwo" type="number" step="0.1"></div><div class="field"><label>Deskripsi 2 kolom</label><input id="descSizeTwo" type="number" step="0.1"></div></div><p class="hint" style="margin-top:9px">Auto Fit memperkecil teks jika kolom terlalu sempit. Hasil dapat sedikit berbeda menurut font browser dan Illustrator.</p></section>
+<section style="border-bottom:0"><h3 style="margin-bottom:11px">Warna</h3><div id="colorControls"></div><div class="fields2" style="margin-top:12px"><div class="field"><label>Footer kiri</label><input id="footerLeft"></div><div class="field"><label>Footer kanan</label><input id="footerRight"></div></div></section></aside></div>
+<div class="modal" id="fontManagerModal"><div class="modal-body font-manager-dialog">
+<div class="row between wrap"><div><h2 style="margin:0">Font Library</h2><p class="hint">Upload banyak font sekaligus; pilih file font yang tepat untuk setiap bagian pricetag.</p></div><button class="btn small ghost" id="closeFontManager">Tutup</button></div>
+<div class="drop font-drop" id="fontDrop" style="margin-top:14px"><strong>Tarik file .TTF / .OTF / .WOFF / .WOFF2 / .ZIP ke sini</strong><p>atau gunakan tombol untuk memilih banyak file sekaligus</p><label class="btn orange small" style="display:inline-block;cursor:pointer;margin-top:10px;color:#17120c">Pilih file font<input id="fontFilesModal" type="file" multiple accept=".ttf,.otf,.woff,.woff2,.zip"></label></div>
+<div class="row between wrap" style="margin-top:14px"><span class="tiny muted" id="fontLibraryCount">Belum ada font impor</span><input id="fontSearch" placeholder="Cari font..." style="width:220px" aria-label="Cari font"/></div>
+<div id="fontLibraryList" class="font-library-list"></div>
+<p class="hint" style="margin-top:12px">Font yang diimpor hanya disimpan di perangkat/browser ini, bukan dikirim ke server. SVG dapat menyertakan font untuk tampilan di browser; Illustrator mungkin tetap perlu font terpasang secara lokal. Pastikan lisensi font mengizinkan embedding.</p>
+</div></div>
+<div id="printArea"></div><style id="pageStyle"></style><div id="toast" class="toast"></div><div class="modal" id="messageModal"><div class="modal-body"><h2 id="modalTitle">Peringatan</h2><p id="modalMessage" class="hint" style="white-space:pre-wrap"></p><div class="row" style="justify-content:flex-end"><button class="btn orange" id="modalClose">Mengerti</button></div></div></div>
+<script>
+/* ===== Ported, unchanged algorithmic core from uploaded JETE Pricetag Studio 1.3 ===== */
+
+/* ===== Ported, unchanged algorithmic core from uploaded JETE Pricetag Studio 1.3 ===== */
+/* JETE Pricetag Studio 1.3 - pure ES3 data and responsive layout engine. */
+var JPS = (function () {
+    var M = 72 / 25.4;
+    function trim(v) { return String(v === null || v === undefined ? '' : v).replace(/^\s+|\s+$/g, ''); }
+    function clone(p) { var r = {}, k; for (k in p) { if (p.hasOwnProperty(k)) { r[k] = p[k]; } } return r; }
+    function money(v) {
+        var s = trim(v).replace(/^Rp\s*/i, '').replace(/\s/g, '');
+        if (!s || s === '-') { return null; }
+        if (/^\d+$/.test(s)) { return Number(s); }
+        if (/^\d{1,3}(\.\d{3})+(,00)?$/.test(s)) { return Number(s.replace(/,00$/, '').replace(/\./g, '')); }
+        if (/^\d{1,3}(,\d{3})+(\.00)?$/.test(s)) { return Number(s.replace(/\.00$/, '').replace(/,/g, '')); }
+        if (/^\d+[,.]00$/.test(s)) { return Number(s.slice(0, -3)); }
+        throw new Error('Harga tidak valid: ' + v + '. Gunakan angka utuh, contoh 199900.');
+    }
+    function rupiah(n) { return 'Rp ' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+    function csv(text) {
+        text = text.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+        var first = text.split('\n')[0], sep = first.indexOf('\t') >= 0 ? '\t' : (first.indexOf(';') >= 0 ? ';' : ',');
+        var rows = [], row = [], cell = '', quoted = false, i, c;
+        for (i = 0; i < text.length; i++) {
+            c = text.charAt(i);
+            if (c === '"') { if (quoted && text.charAt(i + 1) === '"') { cell += '"'; i++; } else { quoted = !quoted; } }
+            else if (c === sep && !quoted) { row.push(cell); cell = ''; }
+            else if (c === '\n' && !quoted) { row.push(cell); if (trim(row.join(''))) { rows.push(row); } row = []; cell = ''; }
+            else { cell += c; }
+        }
+        if (quoted) { throw new Error('Tanda kutip pada CSV belum ditutup.'); }
+        row.push(cell); if (trim(row.join(''))) { rows.push(row); }
+        return rows;
+    }
+    function header(s) { return trim(s).toLowerCase().replace(/[^a-z0-9]/g, ''); }
+    function parse(text) {
+        var rows = csv(text), h = {}, out = [], rejected = [], i, j, a, p;
+        if (rows.length < 2) { throw new Error('Data kosong. Sertakan baris judul kolom dan minimal 2 produk.'); }
+        for (i = 0; i < rows[0].length; i++) { h[header(rows[0][i])] = i; }
+        function value(r, keys) { var k; for (k = 0; k < keys.length; k++) { if (h[keys[k]] !== undefined) { return trim(r[h[keys[k]]]); } } return ''; }
+        if (h.produk === undefined && h.produkvarian === undefined && h.namaproduk === undefined) { throw new Error('Kolom Produk belum ditemukan. Salin mulai baris judul kolom.'); }
+        if (h.normal === undefined || (h.festive === undefined && h.promo === undefined && h.store === undefined)) { throw new Error('Wajib ada kolom Normal serta Festive, Promo, atau Store.'); }
+        for (i = 1; i < rows.length; i++) {
+            a = rows[i];
+            try {
+                p = {id:'row' + i, category:value(a,['kategori']) || 'Produk', group:value(a,['grup','group']), name:value(a,['produk','produkvarian','namaproduk']), desc:value(a,['deskripsi','spek']).replace(/\|/g,'\n'), normal:money(value(a,['normal'])), store:money(value(a,['store'])), festive:money(value(a,['festive','promo'])), note:value(a,['catatan']), source:value(a,['sumber','barissumber'])};
+                if (!p.name) { throw new Error('Nama produk kosong.'); }
+                if (p.normal === null || (p.store === null && p.festive === null)) { throw new Error('Harga belum lengkap.'); }
+                out.push(p);
+            } catch (e) { rejected.push('Baris ' + (i + 1) + ': ' + e.message); }
+        }
+        if (!out.length) { throw new Error('Tidak ada produk valid.\n' + rejected.slice(0,8).join('\n')); }
+        return {items:out,rejected:rejected};
+    }
+    function capacity(value) {
+        var s=trim(value),n=Number(s);
+        if(!/^\d+$/.test(s)||!isFinite(n)||n<2||n>9007199254740991) {throw new Error('Maks. produk/tag harus bilangan bulat minimal 2, contoh 20, 30, atau 50.');}
+        return n;
+    }
+    function validate(items, mode, maxProducts) {
+        var issues = [], i, p, n, max=capacity(maxProducts===undefined?10:maxProducts);
+        if (items.length < 2) { issues.push('Satu pricetag harus berisi minimal 2 produk.'); }
+        if (items.length > max) { issues.push('Grup berisi '+items.length+' produk, melebihi Maks. produk/tag '+max+'. Naikkan batas di tab Produk & grup atau bagi grup.'); }
+        for (i = 0; i < items.length; i++) {
+            p = items[i]; n = p[mode];
+            if (!trim(p.name)) { issues.push('Nama produk ke-' + (i+1) + ' kosong.'); }
+            if (typeof p.normal !== 'number' || p.normal <= 0 || p.normal % 1) { issues.push(p.name + ': harga Normal belum valid.'); }
+            if (typeof n !== 'number' || n <= 0 || n % 1) { issues.push(p.name + ': harga ' + mode + ' belum valid.'); }
+            if (n > p.normal) { issues.push(p.name + ': harga jual lebih tinggi dari Normal. Periksa data.'); }
+        }
+        return issues;
+    }
+    function split(items, max) {
+        max=capacity(max);
+        if(items.length<2) {throw new Error('Satu grup harus berisi minimal 2 produk.');}
+        var count = Math.ceil(items.length/max), base = Math.floor(items.length/count), extra = items.length % count, groups = [], off = 0, n, i;
+        if (base < 2) { throw new Error('Pembagian menyisakan 1 produk. Pilih kapasitas lebih besar atau gabungkan grup.'); }
+        for (i=0;i<count;i++) { n = base+(i<extra?1:0); groups.push(items.slice(off,off+n)); off+=n; }
+        return groups;
+    }
+    function autoGroups(items, max) {
+        max=capacity(max);
+        var keys=[], buckets={}, i, key, result=[], leftovers=[], parts,j,p;
+        for(i=0;i<items.length;i++) { p=items[i]; key='$'+(p.group||p.category); if(!buckets[key]) {buckets[key]=[];keys.push(key);} buckets[key].push(clone(p)); }
+        for(i=0;i<keys.length;i++) {
+            p=buckets[keys[i]];
+            if(p.length<2) {leftovers.push(p[0]);continue;}
+            parts=split(p,max);
+            for(j=0;j<parts.length;j++) {result.push({title:p[0].category,items:parts[j],label:keys[i].slice(1)+(parts.length>1?' / '+(j+1):'')});}
+        }
+        return {groups:result,leftovers:leftovers};
+    }
+    /* Restoring a queue must preserve each saved group, regardless of UI capacity. */
+    function restoreGroups(items) {return autoGroups(items,Math.max(2,items.length));}
+    function serialize(groups) {
+        var rows=[['Grup','Kategori','Produk','Deskripsi','Normal','Store','Festive','Catatan','Sumber']],i,j,p;
+        function q(v) { return '"'+String(v===null||v===undefined?'':v).replace(/"/g,'""')+'"'; }
+        for(i=0;i<groups.length;i++) {for(j=0;j<groups[i].items.length;j++) {p=groups[i].items[j];rows.push(['TAG-'+(i+1),groups[i].title,p.name,p.desc,p.normal,p.store,p.festive,p.note,p.source]);}}
+        for(i=0;i<rows.length;i++) {for(j=0;j<rows[i].length;j++) {rows[i][j]=q(rows[i][j]);} rows[i]=rows[i].join(',');}
+        return '\uFEFF'+rows.join('\r\n');
+    }
+    function hex(s) {s=trim(s).replace('#','');if(!/^[0-9a-f]{6}$/i.test(s)){throw new Error('Warna harus 6 digit HEX, contoh FF8501.');}return '#'+s.toUpperCase();}
+    function fontSize(value, fallback) {
+        if(value===undefined || value===null || trim(value)==='') {return fallback;}
+        var n=Number(String(value).replace(',','.'));
+        if(!isFinite(n)||n<1||n>300) {throw new Error('Ukuran font harus angka 1-300 pt, contoh 5,5.');}
+        return n;
+    }
+    function textHeight(content,size,bold,measure) {
+        return measure.height ? measure.height(content,size,bold) : size*1.10;
+    }
+    /* Wrap at spaces first. An overlong code/word is split without deleting characters. */
+    function wrapText(content,width,size,bold,measure) {
+        var paras=trim(content).replace(/\r\n?/g,'\n').split('\n'),out=[],i,j,k,words,line,word,part,ch,candidate;
+        for(i=0;i<paras.length;i++) {
+            if(!trim(paras[i])) {continue;}
+            words=trim(paras[i]).split(/\s+/);line='';
+            for(j=0;j<words.length;j++) {
+                word=words[j];candidate=line?line+' '+word:word;
+                if(measure(candidate,size,bold)<=width) {line=candidate;continue;}
+                if(line) {out.push(line);line='';}
+                if(measure(word,size,bold)<=width) {line=word;continue;}
+                part='';
+                for(k=0;k<word.length;k++) {
+                    ch=word.charAt(k);
+                    if(ch.charCodeAt(0)>=0xD800 && ch.charCodeAt(0)<=0xDBFF && k+1<word.length) {ch+=word.charAt(++k);}
+                    if(measure(ch,size,bold)>width) {return null;}
+                    if(part && measure(part+ch,size,bold)>width) {out.push(part);part='';}
+                    part+=ch;
+                }
+                line=part;
+            }
+            if(line) {out.push(line);}
+        }
+        return out;
+    }
+    /* Name and description share a fixed cell; fit both width AND measured height. */
+    function fitProduct(name,desc,width,height,nameSize,descSize,measure) {
+        var ns=nameSize,ds=descSize,names,descs,lines,total,i,h,step,attempt;
+        for(attempt=0;attempt<160;attempt++) {
+            names=wrapText(name,width,ns,true,measure);descs=wrapText(desc,width,ds,false,measure);
+            lines=[];total=0;
+            if(names && descs) {
+                for(i=0;i<names.length+descs.length;i++) {
+                    var isName=i<names.length,s=isName?ns:ds,t=isName?names[i]:descs[i-names.length];
+                    h=textHeight(t,s,isName,measure);step=Math.max(s*1.16,h+s*.06);
+                    lines.push({text:t,size:s,bold:isName,w:measure(t,s,isName),h:h,offset:total});total+=step;
+                }
+                if(lines.length) {total=lines[lines.length-1].offset+lines[lines.length-1].h;}
+                if(total<=height && lines.length) {return {lines:lines,height:total,nameSize:ns,descSize:ds,small:ns<5.5||(descs.length>0&&ds<5.5)};}
+            }
+            if(ns<=1 && ds<=1) {break;}
+            ns=Math.max(1,Math.floor(ns*.96*100)/100);ds=Math.max(1,Math.floor(ds*.96*100)/100);
+        }
+        throw new Error('Teks tidak muat bahkan setelah penyesuaian otomatis sampai 1 pt. Kurangi produk dalam grup atau ringkas deskripsi.');
+    }
+    function number(value,fallback,min,max,label) {
+        if(value===undefined || value===null || trim(value)==='') {return fallback;}
+        var n=Number(String(value).replace(',','.'));
+        if(!isFinite(n)||n<min||n>max) {throw new Error(label+' harus angka '+min+' sampai '+max+'.');}
+        return n;
+    }
+    function canvas(settings) {
+        var w=number(settings.widthMm,95,30,1000,'Lebar kanvas (mm)'),h=number(settings.heightMm,65,30,1000,'Tinggi kanvas (mm)');
+        return {width:w*M,height:h*M,scale:Math.min(w/95,h/65)};
+    }
+    function logoBox(settings,geo) {
+        var s=geo.scale,mx=5.5*M*s,my=4.7*M*s,W=geo.width,H=geo.height;
+        var aspect=number(settings.logoAspect,26/11,.05,30,'Rasio logo'),w=number(settings.logoWidthMm,26*s,.1,1000,'Lebar logo (mm)')*M,h=w/aspect;
+        var position=settings.logoPosition||'top-left',x,y;
+        if(position==='custom') {
+            x=number(settings.logoXmm,5.5*s,0,1000,'X logo (mm)')*M;y=number(settings.logoYmm,4.7*s,0,1000,'Y logo (mm)')*M;
+        } else {
+            if(!/^(top|bottom)-(left|center|right)$/.test(position)) {throw new Error('Posisi logo tidak dikenali.');}
+            x=position.indexOf('left')>=0?mx:(position.indexOf('right')>=0?W-mx-w:(W-w)/2);
+            y=position.indexOf('top')===0?my:H-10.7*M*s-h;
+        }
+        if(x<0 || y<0 || x+w>W+.01 || y+h>H+.01) {throw new Error('Logo keluar kanvas. Perkecil lebar logo atau ubah posisi X/Y.');}
+        return {type:'logo',x:x,y:y,w:w,h:h,role:'LOGO_ASLI',band:position.indexOf('top')===0?'top':(position.indexOf('bottom')===0?'bottom':(y+h/2<=H/2?'top':'bottom'))};
+    }
+    function fitRectangle(iw,ih,x,y,w,h) {
+        if(!(iw>0&&ih>0&&w>0&&h>0)) {throw new Error('Ukuran logo tidak valid. Pilih satu Group logo atau file logo yang benar.');}
+        var scale=Math.min(w/iw,h/ih);
+        return {x:x,y:y,w:iw*scale,h:ih*scale,scale:scale};
+    }
+    function packArtboards(count,width,height,bleedMm) {
+        var bleed=number(bleedMm,0,0,10,'Bleed (mm)')*M,gap=10*M+2*bleed,limit=16000;
+        var maxCols=Math.floor((limit-2*bleed+gap)/(width+gap)),maxRows=Math.floor((limit-2*bleed+gap)/(height+gap));
+        if(count<1||count>100||count%1) {throw new Error('Jumlah pricetag harus 1 sampai 100.');}
+        if(maxCols<1||maxRows<1||count>maxCols*maxRows) {throw new Error('Ukuran dan jumlah artboard melebihi area dokumen standar. Kurangi antrean per proses atau ukuran kanvas.');}
+        var cols=Math.min(4,count,maxCols),rows=Math.ceil(count/cols),i,out=[];
+        while(rows>maxRows) {cols++;rows=Math.ceil(count/cols);}
+        var totalW=cols*width+(cols-1)*gap+2*bleed,totalH=rows*height+(rows-1)*gap+2*bleed;
+        for(i=0;i<count;i++) {out.push({x:(width-totalW)/2+bleed+(i%cols)*(width+gap),y:(height+totalH)/2-bleed-Math.floor(i/cols)*(height+gap)});}
+        return {origins:out,columns:cols,rows:rows,width:totalW,height:totalH};
+    }
+    function layout(group, settings, measure) {
+        var items=group.items,n=items.length,errors=validate(items,settings.price,settings.maxProducts),geo=canvas(settings),s=geo.scale,W=geo.width,H=geo.height,nodes=[],warnings=[];
+        if(errors.length) {throw new Error(errors.join('\n'));}
+        var cols=number(settings.columns,0,0,2,'Kolom');
+        if(cols%1) {throw new Error('Pilih Otomatis, 1 kolom, atau 2 kolom.');}
+        if(!cols) {cols=W<H?1:(n<=4?1:2);}
+        var rows=Math.ceil(n/cols),margin=5.5*M*s,gap=5*M*s,cw=(W-2*margin-(cols-1)*gap)/cols;
+        var fName=fontSize(cols===1?settings.nameSizeOne:settings.nameSizeTwo,(cols===1?(n<=3?13:12):(rows<=3?8.2:(rows===4?7.6:7.1)))*s);
+        var fDesc=fontSize(cols===1?settings.descSizeOne:settings.descSizeTwo,(cols===1?7:5.5)*s);
+        var fPrice=(cols===1?(n<=3?13:12.5):(rows<=3?8.6:(rows===4?8.2:7.8)))*s,fOld=(cols===1?7:(rows<=3?5.6:5.1))*s;
+        var color=hex(settings.orange||'FF8501'),nameColor=hex(settings.nameColor||'FFFFFF'),descColor=hex(settings.descColor||'FFFFFF');
+        var priceColor=hex(settings.priceColor||'FFFFFF'),normalColor=hex(settings.normalColor||'263238'),headerColor=hex(settings.headerColor||'FFFFFF');
+        var lineColor=hex(settings.lineColor||'FFFFFF'),strikeColor=hex(settings.strikeColor||'D71920'),bleed=number(settings.bleed,0,0,10,'Bleed (mm)')*M;
+        nodes.push({type:'rect',x:-bleed,y:-bleed,w:W+2*bleed,h:H+2*bleed,fill:color,role:'BACKGROUND'});
+        var logo=logoBox(settings,geo);nodes.push(logo);
+        function text(content,x,y,width,size,bold,fill,align,role,maxHeight) {
+            var actual=Math.max(1,size),mw,mh;
+            while(true) {
+                mw=measure(content,actual,bold,role);mh=textHeight(content,actual,bold,measure);
+                if(mw<=width+.01 && (!maxHeight || mh<=maxHeight+.01)) {break;}
+                if(actual<=1) {throw new Error(role+': teks tidak muat pada kanvas ini. Perbesar kanvas atau ringkas teks.');}
+                actual=Math.max(1,Math.floor(actual*.96*100)/100);
+            }
+            var node={type:'text',text:content,x:align==='right'?x+width-mw:(align==='center'?x+(width-mw)/2:x),y:y,w:mw,h:mh,size:actual,bold:bold,fill:fill,role:role};nodes.push(node);return node;
+        }
+        var footerY=H-5.8*M*s,fw=(W-2*margin-gap)/2;
+        var footLeft=text(settings.footerLeft||'@jeteindonesia',margin,footerY,fw,7.5*s,true,headerColor,'left','FOOTER_KIRI',4*M*s);
+        var footRight=text(settings.footerRight||'#Forabetterday',W-margin-fw,footerY,fw,7.5*s,true,headerColor,'right','FOOTER_KANAN',4*M*s);
+        var footerH=Math.max(footLeft.h,footRight.h),top=18.5*M*s,bottom=H-8.2*M*s;
+        var titleX=margin,titleY=8*M*s,titleW=W-2*margin,titleAlign='right',sideGap=6.5*M*s,titleNode;
+        if(logo.band==='top') {
+            var spaceLeft=logo.x-margin-sideGap,spaceRight=W-margin-logo.x-logo.w-sideGap;
+            if(Math.max(spaceLeft,spaceRight)>=titleW*.36) {
+                if(spaceRight>=spaceLeft) {titleX=logo.x+logo.w+sideGap;titleW=spaceRight;titleAlign='right';}
+                else {titleW=spaceLeft;titleAlign='left';}
+                titleNode=text(group.title,titleX,0,titleW,15*s,true,headerColor,titleAlign,'JUDUL',Math.max(logo.h,7*M*s));
+                titleNode.y=logo.y+Math.max(0,(logo.h-titleNode.h)/2);
+            } else {
+                titleY=logo.y+logo.h+2.5*M*s;titleAlign='center';
+                titleNode=text(group.title,titleX,titleY,titleW,15*s,true,headerColor,titleAlign,'JUDUL',8*M*s);
+            }
+            top=Math.max(top,logo.y+logo.h+2.5*M*s,titleNode.y+titleNode.h+2.5*M*s);
+        } else {
+            titleNode=text(group.title,titleX,titleY,titleW,15*s,true,headerColor,titleAlign,'JUDUL',8*M*s);
+            if(logo.y+logo.h>footerY-2*M*s) {
+                footerY=logo.y-2*M*s-footerH;footLeft.y=footerY;footRight.y=footerY;
+                bottom=Math.min(bottom,footerY-2*M*s);
+            } else {bottom=Math.min(bottom,logo.y-2.5*M*s);}
+            top=titleNode.y+titleNode.h+2.5*M*s;
+        }
+        bottom=Math.min(bottom,footerY-2*M*s);
+        if(bottom-top<Math.max(4,rows*2)) {throw new Error('Ruang kanvas tidak cukup untuk '+n+' produk. Perbesar kanvas, pilih 2 kolom, perkecil/geser logo, atau kurangi produk.');}
+        var rh=(bottom-top)/rows,padding=Math.min(.5*s,rh*.04),cellGap=2*M*s;
+        if(cols===2) {nodes.push({type:'line',x:W/2,y:top,x2:W/2,y2:bottom,stroke:lineColor,weight:Math.max(.25,.45*s),role:'PEMISAH'});}
+        var i,p,col,row,x,y,priceWidth,nameWidth,block,j,cursor,promo,showOld,ph,line,old,sale;
+        for(i=0;i<n;i++) {
+            p=items[i];col=Math.floor(i/rows);row=i%rows;x=margin+col*(cw+gap);y=top+row*rh;
+            priceWidth=cw*(cols===1?.45:.47);nameWidth=cw-priceWidth-cellGap;
+            block=fitProduct(p.name,p.desc||'',nameWidth-Math.min(.15*s,.3),rh-2*padding,fName,fDesc,measure);
+            cursor=y+(rh-block.height)/2;
+            for(j=0;j<block.lines.length;j++) {
+                line=block.lines[j];nodes.push({type:'text',text:line.text,x:x,y:cursor+line.offset,w:line.w,h:line.h,size:line.size,bold:line.bold,fill:line.bold?nameColor:descColor,role:(line.bold?'PRODUK_':'DESKRIPSI_')+(i+1),lineIndex:j+1});
+            }
+            if(block.small) {warnings.push('Produk '+(i+1)+' ('+p.name+'): teks di bawah 5,5 pt.');}
+            promo=p[settings.price];showOld=promo<p.normal;
+            old=showOld?text(rupiah(p.normal),x+cw-priceWidth,0,priceWidth,fOld,true,normalColor,'right','NORMAL_'+(i+1)):null;
+            sale=text(rupiah(promo),x+cw-priceWidth,0,priceWidth,fPrice,true,priceColor,'right','HARGA_'+(i+1));
+            var priceGap=Math.min(s,rh*.05);ph=sale.h+(old?old.h+priceGap:0);
+            while(ph>rh-2*padding && sale.size>1) {
+                var priceNodes=old?[old,sale]:[sale],a,pn;
+                for(a=0;a<priceNodes.length;a++) {pn=priceNodes[a];pn.size=Math.max(1,Math.floor(pn.size*.96*100)/100);pn.w=measure(pn.text,pn.size,true);pn.h=textHeight(pn.text,pn.size,true,measure);pn.x=x+cw-pn.w;}
+                ph=sale.h+(old?old.h+priceGap:0);
+            }
+            if(ph>rh-2*padding) {throw new Error(p.name+': blok harga tidak muat. Perbesar kanvas atau kurangi jumlah produk.');}
+            if(sale.size<5.5) {warnings.push('Produk '+(i+1)+' ('+p.name+'): harga jual di bawah 5,5 pt.');}
+            cursor=y+(rh-ph)/2;
+            if(showOld) {
+                old.y=cursor;nodes.push({type:'line',x:old.x-.3*s,y:old.y+old.h*.8,x2:old.x+old.w+.3*s,y2:old.y+old.h*.15,stroke:strikeColor,weight:Math.max(.25,.55*s),role:'CORET_'+(i+1)});cursor+=old.h+priceGap;
+            }
+            sale.y=cursor;
+        }
+        return {width:W,height:H,columns:cols,rows:rows,nodes:nodes,count:n,warnings:warnings,scale:s,zones:{margin:margin,gap:gap,top:top,bottom:bottom,rowHeight:rh,columnWidth:cw}};
+    }
+    return {mm:M,trim:trim,clone:clone,money:money,rupiah:rupiah,parse:parse,csv:csv,validate:validate,capacity:capacity,split:split,autoGroups:autoGroups,restoreGroups:restoreGroups,serialize:serialize,layout:layout,hex:hex,fontSize:fontSize,number:number,canvas:canvas,logoBox:logoBox,fitRectangle:fitRectangle,packArtboards:packArtboards};
+}());
+
+
+
+/* ===== Browser interface and export adapter ===== */
+(function(){'use strict';
+const $=id=>document.getElementById(id);
+const defaults={widthMm:95,heightMm:65,maxProducts:10,columns:0,price:'festive',bleed:0,logoPosition:'top-left',logoWidthMm:26,logoXmm:5.5,logoYmm:4.7,logoAspect:26/11,orange:'#FF8501',nameColor:'#FFFFFF',descColor:'#FFFFFF',priceColor:'#FFFFFF',normalColor:'#263238',headerColor:'#FFFFFF',lineColor:'#FFFFFF',strikeColor:'#D71920',nameSizeOne:12,descSizeOne:7,nameSizeTwo:7.1,descSizeTwo:5.5,footerLeft:'@jeteindonesia',footerRight:'#Forabetterday',font:'Arial',fontDesc:'Arial',fontPrice:'Arial',fontHeader:'Arial',draft:true};
+const colorNames={orange:'Background',nameColor:'Nama produk',descColor:'Deskripsi',priceColor:'Harga promo',normalColor:'Harga coret',headerColor:'Judul & footer',lineColor:'Garis pemisah',strikeColor:'Coretan harga'};
+const state={groups:[],selected:0,settings:Object.assign({},defaults),logoData:null,logoName:'',draft:true};
+const builtInFonts=['Arial','Montserrat','Poppins','Plus Jakarta Sans','Inter','Helvetica','Segoe UI','Anton','Georgia','Times New Roman'];
+const fontLibrary=new Map();
+let fontDatabase=null,storageAvailable=false,fontLoading=false;
+const fontFieldIds=['font','fontDesc','fontPrice','fontHeader'];
+function fontForRole(role,bold){const s=state.settings; if(/^DESKRIPSI_/.test(role||''))return s.fontDesc||s.font;
+  if(/^(NORMAL_|HARGA_)/.test(role||''))return s.fontPrice||s.font;
+  if(role==='JUDUL'||/^(FOOTER_)/.test(role||''))return s.fontHeader||s.font;
+  if(/^PRODUK_/.test(role||''))return s.font;
+  return bold?s.font:(s.fontDesc||s.font);
+}
+function fontWeight(family,bold){return fontLibrary.has(family)?400:(bold?700:400);}
+function fontFamilyCss(family){return '"'+String(family||'Arial').replace(/[\"\\]/g,'')+'",Arial,sans-serif';}
+function fontRoleStyle(role,bold,size){const family=fontForRole(role,bold);return `${fontWeight(family,bold)} ${size}px ${fontFamilyCss(family)}`;}
+function niceFontName(s){return s.replace(/\.(ttf|otf|woff2?|TTF|OTF|WOFF2?)$/i,'').replace(/[_-]+/g,' ').replace(/([a-z])([A-Z])/g,'$1 $2').trim();}
+function fontMime(name){const e=name.toLowerCase().split('.').pop();return ({ttf:'font/ttf',otf:'font/otf',woff:'font/woff',woff2:'font/woff2'})[e]||'application/octet-stream';}
+function fontFileAllowed(name){return /\.(ttf|otf|woff2?)$/i.test(name);}
+function fontIsPresent(family){return !String(family||'').startsWith('JPS_CUSTOM_')||fontLibrary.has(family);}
+function missingFonts(){return [...new Set(fontFieldIds.map(k=>state.settings[k]).filter(v=>!fontIsPresent(v)))];}
+function formatFileSize(bytes){return bytes<1048576?(bytes/1024).toFixed(0)+' KB':(bytes/1048576).toFixed(1)+' MB';}
+function updateFontOptions(){for(const id of fontFieldIds){const el=$(id);if(!el)continue;const previous=state.settings[id]||state.settings.font||'Arial';const existing=builtInFonts.map(f=>`<option value="${escapeHtml(f)}">${escapeHtml(f)} · Perangkat</option>`).join('');
+    const custom=[...fontLibrary.values()].sort((a,b)=>a.label.localeCompare(b.label)).map(f=>`<option value="${escapeHtml(f.id)}">${escapeHtml(f.label)} · Impor</option>`).join('');
+    const missing=previous.startsWith('JPS_CUSTOM_')&&!fontLibrary.has(previous)?`<option value="${escapeHtml(previous)}">⚠ Font belum tersedia — impor ulang</option>`:'';
+    el.innerHTML=existing+custom+missing;el.value=previous;}
+  $('fontCount').textContent=fontLibrary.size+' font impor';
+  const missing=missingFonts();$('fontStatus').textContent=missing.length?'Font proyek tidak ditemukan di perangkat ini. Impor ulang font yang sesuai sebelum ekspor.':fontLibrary.size+' font eksternal aktif. '+(storageAvailable?'Tersimpan otomatis di browser ini.':'Penyimpanan permanen tidak tersedia; impor ulang setelah menutup aplikasi.');
+  $('fontStatus').className='hint '+(missing.length?'font-status-bad':fontLibrary.size?'font-status-good':'');
+  renderFontLibrary();
+}
+function renderFontLibrary(){const el=$('fontLibraryList');if(!el)return;const needle=$('fontSearch').value.toLowerCase().trim();const all=[...fontLibrary.values()].filter(f=>f.label.toLowerCase().includes(needle)||f.name.toLowerCase().includes(needle));$('fontLibraryCount').textContent=fontLibrary.size+' font eksternal terdaftar';
+  el.innerHTML=all.length?all.map(f=>`<div class="font-record"><div style="min-width:0"><div class="font-filename">${escapeHtml(f.label)}</div><div class="font-sample" style="font-family:'${f.id}',sans-serif">Aa Bb Cc 123 — JETE Rp 199.900</div><div class="font-meta">${escapeHtml(f.name)} · ${formatFileSize(f.bytes.byteLength)}</div></div><div style="display:flex;flex-direction:column;gap:6px"><button class="btn small ghost" data-apply-font="${f.id}">Pakai semua</button><button class="btn small danger" data-remove-font="${f.id}">Hapus</button></div></div>`).join(''):'<p class="hint" style="padding:12px">Belum ada font yang cocok. Gunakan tombol Impor untuk menambah font.</p>';
+  for(const b of el.querySelectorAll('[data-remove-font]'))b.onclick=()=>removeFont(b.dataset.removeFont);for(const b of el.querySelectorAll('[data-apply-font]'))b.onclick=()=>{for(const key of fontFieldIds)state.settings[key]=b.dataset.applyFont;updateFontOptions();renderPreview();toast('Font diterapkan ke seluruh elemen.');};
+}
+function openFontDB(){return new Promise((resolve,reject)=>{if(!('indexedDB' in window)){reject(new Error('IndexedDB tidak tersedia.'));return;}
+  const r=indexedDB.open('JETE_Pricetag_Font_Library',1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('fonts'))r.result.createObjectStore('fonts',{keyPath:'id'});};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+function dbExecute(method,payload){if(!fontDatabase)return Promise.resolve();return new Promise((resolve,reject)=>{const tx=fontDatabase.transaction('fonts',method==='getAll'?'readonly':'readwrite');const store=tx.objectStore('fonts');const req=method==='getAll'?store.getAll():method==='delete'?store.delete(payload):store.put(payload);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
+async function restoreFonts(){try{fontDatabase=await openFontDB();storageAvailable=true;const saved=await dbExecute('getAll');for(const f of saved){try{await registerFont(f,false);}catch(e){console.warn('Font tersimpan gagal dimuat:',f.name,e);}}
+  }catch(e){storageAvailable=false;console.info('Font aktif hanya pada sesi ini:',e.message);}updateFontOptions();renderPreview();}
+async function registerFont(entry,persist=true){if(!document.fonts||typeof FontFace==='undefined')throw new Error('Browser ini belum mendukung font eksternal. Gunakan Chrome atau Edge terbaru.');
+  const bytes=entry.bytes instanceof ArrayBuffer?new Uint8Array(entry.bytes):new Uint8Array(entry.bytes);
+  if(!bytes.byteLength||bytes.byteLength>25*1024*1024)throw new Error(entry.name+': ukuran font harus 1 B–25 MB.');
+  if(fontLibrary.has(entry.id))return false;
+  const face=new FontFace(entry.id,bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),{style:'normal',weight:'400'});
+  await face.load();document.fonts.add(face);
+  const record={id:entry.id,label:entry.label||niceFontName(entry.name),name:entry.name,bytes,face,mime:fontMime(entry.name),base64:null};fontLibrary.set(entry.id,record);
+  if(persist&&fontDatabase){try{await dbExecute('put',{id:record.id,name:record.name,label:record.label,bytes:record.bytes.buffer});}catch(e){storageAvailable=false;console.warn('Font gagal disimpan:',e);}}
+  return true;
+}
+function fontIdForFile(file,bytes){const seed=(file.name+'|'+bytes.byteLength).toLowerCase();let h=2166136261;for(let i=0;i<seed.length;i++)h=Math.imul(h^seed.charCodeAt(i),16777619);for(let i=0;i<bytes.length;i++)h=Math.imul(h^bytes[i],16777619);return 'JPS_CUSTOM_'+(h>>>0).toString(36).toUpperCase();}
+async function extractFontZip(file){const buffer=await file.arrayBuffer(),b=new Uint8Array(buffer),dv=new DataView(buffer),dec=new TextDecoder();let pos=-1;
+  for(let i=b.length-22;i>=Math.max(0,b.length-65557);i--){if(dv.getUint32(i,true)===0x06054b50){pos=i;break;}}
+  if(pos<0)throw new Error('Arsip ZIP tidak valid.');
+  const count=dv.getUint16(pos+10,true);if(count>300)throw new Error('ZIP terlalu besar: maks. 300 berkas.');
+  let cd=dv.getUint32(pos+16,true),total=0;const files=[];
+  for(let i=0;i<count;i++){
+    if(dv.getUint32(cd,true)!==0x02014b50)throw new Error('Daftar file ZIP tidak valid.');
+    const method=dv.getUint16(cd+10,true),sz=dv.getUint32(cd+20,true),plain=dv.getUint32(cd+24,true),fnlen=dv.getUint16(cd+28,true),extralen=dv.getUint16(cd+30,true),comment=dv.getUint16(cd+32,true),offset=dv.getUint32(cd+42,true);
+    const name=dec.decode(b.subarray(cd+46,cd+46+fnlen));cd+=46+fnlen+extralen+comment;if(!fontFileAllowed(name))continue;
+    if(sz>25*1024*1024||plain>25*1024*1024)throw new Error('Font dalam ZIP melebihi 25 MB: '+name);
+    total+=plain;if(total>160*1024*1024)throw new Error('Total font ZIP lebih dari 160 MB.');
+    if(files.length>=200)throw new Error('Maksimal 200 font dalam satu ZIP.');
+    if(dv.getUint32(offset,true)!==0x04034b50)throw new Error('Data ZIP rusak.');
+    const start=offset+30+dv.getUint16(offset+26,true)+dv.getUint16(offset+28,true);let data=b.slice(start,start+sz);
+    if(method===8){if(!('DecompressionStream' in window))throw new Error('Browser ini belum mendukung ZIP terkompresi. Ekstrak ZIP, lalu pilih semua file font.');
+      try{data=new Uint8Array(await new Response(new Blob([data]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer());}catch(e){throw new Error('ZIP tidak bisa dibuka. Ekstrak ZIP secara manual lalu impor file font.');}}
+    else if(method!==0)throw new Error('Metode kompresi ZIP tidak didukung.');
+    if(data.byteLength!==plain)throw new Error('Ukuran font dalam ZIP tidak cocok: '+name);
+    const base=name.split('/').pop();files.push(new File([data],base,{type:fontMime(base),lastModified:file.lastModified}));
+  }
+  return files;
+}
+async function importFontFiles(files){if(fontLoading)return;if(!files.length)return;fontLoading=true;const ok=[],bad=[];try{
+  let list=[];for(const file of files){if(/\.zip$/i.test(file.name)){try{list.push(...await extractFontZip(file));}catch(e){bad.push(file.name+': '+e.message);}}else if(fontFileAllowed(file.name))list.push(file);else bad.push(file.name+': bukan format font yang didukung.');}
+  if(list.length>300)throw new Error('Maksimal 300 font dalam satu proses.');
+  if(list.reduce((sum,f)=>sum+f.size,0)>180*1024*1024)throw new Error('Total impor per sesi maksimal 180 MB. Bagi font ke beberapa batch.');
+  for(const file of list){try{const bytes=new Uint8Array(await file.arrayBuffer());const id=fontIdForFile(file,bytes);if(fontLibrary.has(id))continue;await registerFont({id,name:file.name,label:niceFontName(file.name),bytes});ok.push(file.name);}catch(e){bad.push(file.name+': '+e.message);}}
+  updateFontOptions();renderPreview();toast(ok.length+' font berhasil diimpor'+(bad.length?'; '+bad.length+' gagal':'')+'.',bad.length?'bad':'ok');
+  if(bad.length)modal('Sebagian font tidak terbaca',bad.slice(0,15).join('\n'));
+}catch(e){modal('Gagal mengimpor font',e.message);}finally{fontLoading=false;}
+}
+async function removeFont(id){const f=fontLibrary.get(id);if(!f)return;if(!confirm('Hapus font '+f.label+' dari library perangkat ini?'))return;
+  fontLibrary.delete(id);document.fonts.delete(f.face);if(fontDatabase){try{await dbExecute('delete',id);}catch(e){console.warn('Gagal menghapus penyimpanan font:',e);}}
+  for(const key of fontFieldIds)if(state.settings[key]===id)state.settings[key]='Arial';updateFontOptions();renderPreview();toast(f.label+' dihapus.');
+}
+function fontBase64(f){if(!f.base64){let out='';const b=f.bytes;for(let i=0;i<b.length;i+=8192)out+=String.fromCharCode.apply(null,b.subarray(i,i+8192));f.base64=btoa(out);}return f.base64;}
+function svgFontDefs(){const used=[...new Set(fontFieldIds.map(k=>state.settings[k]))].filter(f=>fontLibrary.has(f));if(!used.length)return '';
+  const rules=used.map(id=>{const f=fontLibrary.get(id);return `@font-face{font-family:'${id}';src:url(data:${f.mime};base64,${fontBase64(f)}) format('${f.mime==='font/woff2'?'woff2':f.mime==='font/woff'?'woff':f.mime==='font/otf'?'opentype':'truetype'}');font-style:normal;font-weight:400;}`;}).join('');
+  return '<defs><style type="text/css"><![CDATA['+rules+']]></style></defs>';
+}
+
+const currency=n=>typeof n==='number'?JPS.rupiah(n):'';
+let toastTimer=null, debounceTimer=null, canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
+function escapeHtml(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function svgEsc(s){return escapeHtml(s);}
+function safeName(s){return String(s||'JETE_Pricetag').replace(/[\\/:*?"<>|]/g,'-').replace(/\s+/g,'_').slice(0,70);}
+function toast(msg,kind='ok'){const el=$('toast');el.textContent=msg;el.style.borderLeftColor=kind==='bad'?'#ff7777':'#71d3ab';el.classList.add('on');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('on'),4400);}
+function modal(title,msg){$('modalTitle').textContent=title;$('modalMessage').textContent=msg;$('messageModal').classList.add('on');}
+$('modalClose').onclick=()=> $('messageModal').classList.remove('on');
+function selectedGroup(){return state.groups[state.selected]||null;}
+function measureText(s,size,bold,role){const family=fontForRole(role,bold);ctx.font=`${fontWeight(family,bold)} ${size*96/72}px ${fontFamilyCss(family)}`;return ctx.measureText(String(s)).width*72/96;}
+measureText.height=(s,size,bold)=>size*1.10;
+function updateSetting(id,v){const s=state.settings;if(['columns','maxProducts','bleed'].includes(id))v=Number(v);if(['widthCm','heightCm','logoWidth','logoX','logoY'].includes(id)){const target={widthCm:'widthMm',heightCm:'heightMm',logoWidth:'logoWidthMm',logoX:'logoXmm',logoY:'logoYmm'}[id];s[target]=Number(String(v).replace(',','.'))*10;}else if(['nameSizeOne','nameSizeTwo','descSizeOne','descSizeTwo'].includes(id))s[id]=Number(v);else s[id]=v;}
+function settingsValid(){const s=state.settings;JPS.canvas(s);JPS.logoBox(s,JPS.canvas(s));JPS.capacity(s.maxProducts);['orange','nameColor','descColor','priceColor','normalColor','headerColor','lineColor','strikeColor'].forEach(k=>JPS.hex(s[k]));return true;}
+function configInput(){const s=state.settings;for(const [id,k,div] of [['widthCm','widthMm',10],['heightCm','heightMm',10],['logoWidth','logoWidthMm',10],['logoX','logoXmm',10],['logoY','logoYmm',10]])$(id).value=+(s[k]/div).toFixed(3);for(const id of ['columns','maxProducts','price','bleed','logoPosition','font','fontDesc','fontPrice','fontHeader','nameSizeOne','nameSizeTwo','descSizeOne','descSizeTwo','footerLeft','footerRight'])$(id).value=s[id];$('draft').checked=state.draft;$('logoLabel').textContent=state.logoName||'Pilih logo';$('groupTitle').value=selectedGroup()?.title||'';const match=Array.from($('preset').options).find(o=>o.value===`${s.widthMm}x${s.heightMm}`);$('preset').value=match?match.value:'custom';renderColors();toggleLogoXY();updateFontOptions();}
+function toggleLogoXY(){let b=state.settings.logoPosition==='custom';$('logoX').disabled=$('logoY').disabled=!b;}
+function renderColors(){const html=Object.entries(colorNames).map(([k,label])=>`<div class="color-row"><label for="col-${k}">${label}</label><input type="color" id="col-${k}" data-color="${k}" value="${JPS.hex(state.settings[k])}"></div>`).join('');$('colorControls').innerHTML=html;for(const c of $('colorControls').querySelectorAll('[data-color]'))c.addEventListener('input',e=>{state.settings[e.target.dataset.color]=e.target.value;renderPreview();});}
+function renderGroupList(){let html='';state.groups.forEach((g,i)=>{html+=`<button class="group ${i===state.selected?'active':''}" data-select="${i}"><div style="min-width:0"><div class="group-name">${escapeHtml(g.title)}</div><div class="group-sub">${g.items.length} produk · Tag ${i+1}</div></div><span class="group-index">${String(i+1).padStart(2,'0')}</span></button>`;});$('groupList').innerHTML=html||'<p class="small muted" style="padding:12px">Belum ada grup.</p>';$('groupCount').textContent=state.groups.length;$('productCount').textContent=state.groups.reduce((x,g)=>x+g.items.length,0);for(const btn of $('groupList').querySelectorAll('[data-select]'))btn.onclick=()=>{state.selected=Number(btn.dataset.select);renderAll();};}
+function renderTable(){const g=selectedGroup();$('tableTitle').textContent=g?`Produk: ${g.title}`:'Produk dalam grup';$('productRows').innerHTML=g?g.items.map((p,i)=>`<tr data-row="${i}"><td>${i+1}</td><td><input class="name" data-field="name" value="${escapeHtml(p.name)}"></td><td><input data-field="desc" value="${escapeHtml(p.desc||'')}"></td><td><input class="numeric" data-field="normal" value="${p.normal??''}"></td><td><input class="numeric" data-field="store" value="${p.store??''}"></td><td><input class="numeric" data-field="festive" value="${p.festive??''}"></td><td class="act"><button type="button" data-remove="${i}" title="Hapus produk">×</button></td></tr>`).join(''):'<tr><td colspan="7" class="muted" style="padding:15px">Tambahkan grup atau impor data.</td></tr>';
+for(const tr of $('productRows').querySelectorAll('[data-row]'))for(const inp of tr.querySelectorAll('input[data-field]'))inp.addEventListener('change',()=>{const f=inp.dataset.field,i=Number(tr.dataset.row);let val=inp.value;if(['normal','store','festive'].includes(f)){try{val=JPS.money(val);}catch(e){modal('Harga tidak valid',e.message);return;}}g.items[i][f]=val;renderPreview();});
+for(const b of $('productRows').querySelectorAll('[data-remove]'))b.onclick=()=>{g.items.splice(Number(b.dataset.remove),1);renderAll();};}
+function svgNodes(layout){let body='';for(const n of layout.nodes){if(n.type==='rect')body+=`<rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" fill="${n.fill}"/>`;else if(n.type==='line')body+=`<line x1="${n.x}" y1="${n.y}" x2="${n.x2}" y2="${n.y2}" stroke="${n.stroke}" stroke-width="${n.weight}"/>`;else if(n.type==='text')body+=`<text x="${n.x}" y="${n.y+n.size*.94}" fill="${n.fill}" font-family="${svgEsc(fontForRole(n.role,n.bold))},Arial,sans-serif" font-size="${n.size}" font-weight="${fontWeight(fontForRole(n.role,n.bold),n.bold)}" xml:space="preserve">${svgEsc(n.text)}</text>`;else if(n.type==='logo'){if(state.logoData){body+=`<image x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" href="${escapeHtml(state.logoData)}" preserveAspectRatio="xMidYMid meet"/>`;}else{body+=`<rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" fill="none" stroke="#ffffffa4" stroke-width=".45" stroke-dasharray="2 2"/><text x="${n.x+n.w/2}" y="${n.y+n.h/2+2.5}" fill="#FFFFFF" font-family="Arial" font-weight="700" font-size="${Math.min(10,n.h*.37)}" text-anchor="middle">LOGO</text>`;}}}return body;}
+function svgFor(g,embedFonts=false){const s=state.settings;const model=JPS.layout(g,s,measureText);const vb=`0 0 ${model.width} ${model.height}`;const svg=`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="${vb}" width="${s.widthMm}mm" height="${s.heightMm}mm" role="img" aria-label="${svgEsc(g.title)}"><title>${svgEsc(g.title)} - JETE Pricetag</title>${embedFonts?svgFontDefs():''}${svgNodes(model)}</svg>`;return {svg,model};}
+function renderPreview(){const g=selectedGroup();const el=$('preview');const s=state.settings;$('previewSize').textContent=`${s.widthMm/10} × ${s.heightMm/10} cm`;$('pricePill').textContent=s.price==='festive'?'Festive / Promo':'Store';$('previewTitle').textContent=g?g.title:'Pratinjau pricetag';$('countPill').textContent=g?g.items.length+' produk':'0 produk';if(!g){el.innerHTML='<div class="muted">Impor data atau tambahkan grup baru.</div>';$('columnsPill').textContent='—';$('previewWarnings').textContent='';return;}try{const {svg,model}=svgFor(g);el.innerHTML=svg;$('columnsPill').textContent=model.columns+' kolom · '+model.rows+' baris';$('previewWarnings').textContent=model.warnings.length?model.warnings.length+' peringatan teks kecil':'Teks otomatis menyesuaikan';$('previewWarnings').className=model.warnings.length?'tiny warning':'tiny muted';$('notice').classList.remove('visible');}catch(e){el.innerHTML=`<div class="error">${escapeHtml(e.message)}</div>`;$('columnsPill').textContent='Perlu penyesuaian';$('previewWarnings').textContent='';$('notice').textContent=e.message;$('notice').classList.add('visible');}}
+function renderAll(){if(state.selected>=state.groups.length)state.selected=Math.max(0,state.groups.length-1);renderGroupList();renderTable();configInput();renderPreview();}
+function addGroup(){const idx=state.groups.length+1;state.groups.push({title:'Grup '+idx,label:'Grup '+idx,items:[{id:'new-'+Date.now()+'-1',name:'Produk Baru A',category:'Produk',desc:'',normal:199900,store:149900,festive:149900},{id:'new-'+Date.now()+'-2',name:'Produk Baru B',category:'Produk',desc:'',normal:299900,store:199900,festive:199900}]});state.selected=state.groups.length-1;renderAll();switchTab('data');}
+function convertTable(text){let rows=JPS.csv(text);let header=rows[0].map(s=>String(s).toLowerCase().replace(/[^a-z0-9]/g,''));if(!header.includes('tipe')&&!header.includes('kategori')&&!header.includes('produk')&&!header.includes('produkvarian')&&!header.includes('namaproduk'))throw new Error('Header tabel tidak dikenali. Gunakan kolom Produk/Normal/Festive atau Tipe/Nama/Varian/Normal/Potongan.');
+if(header.includes('produk')||header.includes('produkvarian')||header.includes('namaproduk'))return JPS.parse(text);
+const h={};header.forEach((name,i)=>h[name]=i);const get=(r,k)=>h[k]===undefined?'':String(r[h[k]]??'').trim();const out=[],rejected=[];
+for(let i=1;i<rows.length;i++){const r=rows[i];try{const cat=get(r,'tipe')||get(r,'kategori')||'Produk';const nm=get(r,'nama');if(!nm)continue;const vari=get(r,'varian');const normal=JPS.money(get(r,'normal'));const promo=JPS.money(get(r,'potongan')||get(r,'promo'));if(!normal||!promo)throw new Error('Harga kosong');out.push({id:'row-'+i,category:cat,group:get(r,'grup')||get(r,'kelompok'),name:nm+(vari?' — '+vari:''),desc:'',normal:normal,store:promo,festive:promo,note:'',source:String(i+1)});}catch(e){rejected.push(`Baris ${i+1}: ${e.message}`);}}
+return {items:out,rejected};}
+function parseChat(text){const lines=text.replace(/\r/g,'').split('\n');let group='Grup 1',category='Produk',items=[],rejected=[],unknownPrices=[];for(let i=0;i<lines.length;i++){let str=lines[i].trim();if(!str)continue;let m=str.match(/^kelomp(?:ok|o?k|ok?o)?\s*(\d+)/i)||str.match(/^kelompok\s*(\d+)/i);if(m){group='Kelompok '+m[1];category='Produk';continue;}if(/^travel charger|^stylus$/i.test(str)){category=str.toUpperCase();continue;}str=str.replace(/^[\s*•\-–]+/,'').trim();const amounts=[...str.matchAll(/Rp\s*([\d.,\s]+)/gi)].map(m=>m[1].trim().replace(/\s+/g,'')).map(s=>{try{return JPS.money(s);}catch(e){return null;}}).filter(x=>x!==null);let num=amounts, slash=str.match(/(?:^|\s)([\d.]{5,})\s*\/\s*([\d.]{5,})(?:\s|$)/);if(num.length<2&&slash){num=[JPS.money(slash[1]),JPS.money(slash[2])];}
+if(num.length<2){if(/\d/.test(str))rejected.push('Baris '+(i+1)+': '+str);continue;}
+const idx=str.indexOf(':');let name=idx>=0?str.slice(0,idx):str.replace(/Rp\s*[\d.,]+.*/i,'').replace(/\s[\d.]{5,}\s*\/\s*[\d.]{5,}.*/,'').trim();name=name.replace(/\s*\(\s*harga\s+(?:coret|normal|awal|asli)[^)]*\)?$/i,'').trim();if(!name){rejected.push('Baris '+(i+1)+': Nama kosong');continue;}
+const normal=Math.max(num[0],num[1]),promo=Math.min(num[0],num[1]);if(num[0]!==normal&&num[1]!==promo){unknownPrices.push('Baris '+(i+1)+': '+name);}items.push({id:'chat-'+i,category,group,name,desc:'',normal,store:promo,festive:promo,note:'Dari daftar chat',source:String(i+1)});
+}
+if(!items.length)throw new Error('Tidak ditemukan dua harga per produk. Gunakan format Rp 399.900 (normal) dan Rp 199.900 (promo).');return {items,rejected,unknownPrices};}
+function buildGroups(items,requested){const max=JPS.capacity(requested),bucket=new Map();for(const p of items){const key=p.group||p.category||'Produk';if(!bucket.has(key))bucket.set(key,[]);bucket.get(key).push(p);}const groups=[],leftovers=[];for(const [key,rows] of bucket){if(rows.length<2){leftovers.push(rows[0].name);continue;}const sections=JPS.split(rows,max);sections.forEach((part,i)=>{const cat=part[0].category||'Produk';groups.push({title:cat==='Produk'?key:cat,label:key+(sections.length>1?' / '+(i+1):''),items:part.map(p=>Object.assign({},p))});});}return {groups,leftovers};}
+function applyParsed(res,groupOverride){const parsed=res.items;if(!parsed.length)throw new Error('Tidak ada produk valid.');const built=groupOverride||buildGroups(parsed,state.settings.maxProducts);if(!built.groups.length)throw new Error('Semua kelompok hanya berisi satu produk. Gabungkan minimal 2 produk dalam setiap pricetag.');state.groups=built.groups;state.selected=0;renderAll();let info=`${parsed.length} produk, ${built.groups.length} pricetag siap diedit.`;if((res.rejected||[]).length||(built.leftovers||[]).length||(res.unknownPrices||[]).length){const warnings=[...(res.rejected||[]),...((built.leftovers||[]).map(s=>'Tidak dimasukkan (grup satu produk): '+s)),...((res.unknownPrices||[]).map(s=>'Periksa urutan harga: '+s))];modal('Impor selesai dengan catatan',info+'\n\n'+warnings.slice(0,14).join('\n')+(warnings.length>14?'\n...':'') );}else toast(info);}
+function parseRaw(){const raw=$('rawInput').value.trim();if(!raw){modal('Data kosong','Tempel data produk terlebih dahulu.');return;}try{const first=raw.split('\n')[0].toLowerCase(),looksTabular=/\b(normal|potongan|festive|promo)\b/.test(first)&&/\b(produk|nama|tipe)\b/.test(first);const result=looksTabular?convertTable(raw):parseChat(raw);applyParsed(result);}catch(e){modal('Gagal membaca data',e.message);}}
+function switchTab(name){for(const b of document.querySelectorAll('.tab'))b.classList.toggle('active',b.dataset.tab===name);for(const p of document.querySelectorAll('.tab-panel'))p.classList.toggle('active',p.id==='panel-'+name);}
+function downloadBlob(filename,blob){const a=document.createElement('a');const u=URL.createObjectURL(blob);a.href=u;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000);}
+function utfBlob(str,type){return new Blob([str],{type});}
+function verifyExport(all){if(missingFonts().length)throw new Error('Font proyek belum tersedia: '+missingFonts().join(', ')+'. Impor ulang file font sebelum ekspor.');settingsValid();if(!state.groups.length)throw new Error('Belum ada grup pricetag.');if(!state.draft&&!state.logoData)throw new Error('Logo asli belum diunggah. Pilih logo, atau aktifkan Mode draf.');const sel=all?state.groups:[selectedGroup()];for(let i=0;i<sel.length;i++){if(!sel[i])throw new Error('Pilih grup terlebih dahulu.');try{svgFor(sel[i]);}catch(e){throw new Error('Tag '+(all?i+1:state.selected+1)+' ('+sel[i].title+'): '+e.message);}}return sel;}
+function exportSVG(){try{const g=verifyExport(false)[0];const {svg}=svgFor(g,true);downloadBlob('JETE_Pricetag_'+safeName(g.title)+'.svg',utfBlob(svg,'image/svg+xml;charset=utf-8'));toast('SVG berhasil disiapkan.');}catch(e){modal('Belum dapat ekspor',e.message);}}
+async function exportPNG(){try{const g=verifyExport(false)[0];await document.fonts.ready;const {model}=svgFor(g);
+  const scale=300/25.4,cv=document.createElement('canvas');cv.width=Math.round(state.settings.widthMm*scale);cv.height=Math.round(state.settings.heightMm*scale);
+  const c=cv.getContext('2d');c.setTransform(cv.width/model.width,0,0,cv.height/model.height,0,0);
+  for(const n of model.nodes){if(n.type==='rect'){c.fillStyle=n.fill;c.fillRect(n.x,n.y,n.w,n.h);}
+    else if(n.type==='line'){c.beginPath();c.moveTo(n.x,n.y);c.lineTo(n.x2,n.y2);c.strokeStyle=n.stroke;c.lineWidth=n.weight;c.stroke();}
+    else if(n.type==='text'){const family=fontForRole(n.role,n.bold);c.fillStyle=n.fill;c.textAlign='left';c.textBaseline='alphabetic';c.font=`${fontWeight(family,n.bold)} ${n.size}px ${fontFamilyCss(family)}`;c.fillText(n.text,n.x,n.y+n.size*.94);}
+    else if(n.type==='logo'){if(state.logoData){const img=new Image();img.src=state.logoData;await img.decode();c.drawImage(img,n.x,n.y,n.w,n.h);}
+      else{c.strokeStyle='#FFFFFF';c.strokeRect(n.x,n.y,n.w,n.h);c.fillStyle='#FFFFFF';c.textAlign='center';c.font=`bold ${Math.min(10,n.h*.37)}px Arial`;c.fillText('LOGO',n.x+n.w/2,n.y+n.h/2+2.5);c.textAlign='left';}}}
+  const blob=await new Promise(resolve=>cv.toBlob(resolve,'image/png'));if(!blob)throw new Error('Browser gagal membuat PNG.');
+  downloadBlob('JETE_Pricetag_'+safeName(g.title)+'_300dpi.png',blob);toast('PNG 300 dpi berhasil disiapkan.');
+}catch(e){modal('Belum dapat ekspor PNG',e.message);}}
+function zipPack(entries){const enc=new TextEncoder();const table=new Uint32Array(256);for(let i=0;i<256;i++){let c=i;for(let j=0;j<8;j++)c=c&1?0xEDB88320^(c>>>1):c>>>1;table[i]=c>>>0;}function crc(b){let c=0xFFFFFFFF;for(const v of b)c=table[(c^v)&255]^(c>>>8);return(c^0xFFFFFFFF)>>>0;}const parts=[],central=[];let offset=0;const now=new Date(),dosTime=(now.getHours()<<11)|(now.getMinutes()<<5)|(now.getSeconds()>>1),dosDate=((now.getFullYear()-1980)<<9)|((now.getMonth()+1)<<5)|now.getDate();for(const [name,data] of entries){const f=enc.encode(name),b=enc.encode(data),sum=crc(b);const lh=new Uint8Array(30+f.length),a=new DataView(lh.buffer);a.setUint32(0,0x04034b50,true);a.setUint16(4,20,true);a.setUint16(10,dosTime,true);a.setUint16(12,dosDate,true);a.setUint32(14,sum,true);a.setUint32(18,b.length,true);a.setUint32(22,b.length,true);a.setUint16(26,f.length,true);lh.set(f,30);parts.push(lh,b);const ch=new Uint8Array(46+f.length),v=new DataView(ch.buffer);v.setUint32(0,0x02014b50,true);v.setUint16(4,20,true);v.setUint16(6,20,true);v.setUint16(12,dosTime,true);v.setUint16(14,dosDate,true);v.setUint32(16,sum,true);v.setUint32(20,b.length,true);v.setUint32(24,b.length,true);v.setUint16(28,f.length,true);v.setUint32(42,offset,true);ch.set(f,46);central.push(ch);offset+=lh.length+b.length;}const centralLength=central.reduce((a,b)=>a+b.length,0);const eocd=new Uint8Array(22),z=new DataView(eocd.buffer);z.setUint32(0,0x06054b50,true);z.setUint16(8,entries.length,true);z.setUint16(10,entries.length,true);z.setUint32(12,centralLength,true);z.setUint32(16,offset,true);return new Blob([...parts,...central,eocd],{type:'application/zip'});}
+function exportZip(){try{const gs=verifyExport(true),files=gs.map((g,i)=>[`Tag_${String(i+1).padStart(2,'0')}_${safeName(g.title)}.svg`,svgFor(g,true).svg]);files.push(['Antrean_Pricetag.csv',JPS.serialize(gs)]);files.push(['PETUNJUK.txt','SVG mengandung @font-face embedded untuk tampilan pada browser. Adobe Illustrator mungkin mengabaikan font tertanam; pasang font asli di perangkat Illustrator sebelum edit/cetak. Pastikan hak lisensi embedding. Ukuran file SVG dalam milimeter.']);downloadBlob('JETE_Pricetag_Semua_'+gs.length+'_Tag.zip',zipPack(files));toast(`ZIP berisi ${gs.length} SVG siap digunakan.`);}catch(e){modal('Belum dapat ekspor',e.message);}}
+async function printPDF(){try{const gs=verifyExport(true);await document.fonts.ready;const el=$('printArea');el.innerHTML=gs.map(g=>`<div class="print-page" style="width:${state.settings.widthMm}mm;height:${state.settings.heightMm}mm">${svgFor(g).svg}</div>`).join('');$('pageStyle').textContent=`@page{size:${state.settings.widthMm}mm ${state.settings.heightMm}mm;margin:0}`;window.print();}catch(e){modal('Belum dapat mencetak',e.message);}}
+function saveProject(){const data={format:'jete-pricetag-web-v1',groups:state.groups,settings:state.settings,logoData:state.logoData,logoName:state.logoName,draft:state.draft};downloadBlob('JETE_Pricetag_Project.json',utfBlob(JSON.stringify(data,null,2),'application/json'));toast('Proyek disimpan sebagai JSON.');}
+function loadProjectJson(str){const obj=JSON.parse(str);if(!obj||obj.format!=='jete-pricetag-web-v1'||!Array.isArray(obj.groups))throw new Error('File ini bukan proyek JETE Pricetag Web.');state.groups=obj.groups;state.settings=Object.assign({},defaults,obj.settings||{});for(const k of ['fontDesc','fontPrice','fontHeader'])if(!obj.settings||obj.settings[k]===undefined)state.settings[k]=state.settings.font;state.logoData=obj.logoData||null;state.logoName=obj.logoName||'';state.draft=Boolean(obj.draft);state.selected=0;renderAll();if(missingFonts().length)modal('Font belum tersedia','File proyek memakai font eksternal yang belum ada di perangkat ini. Impor ulang font melalui Font Manager agar tampilan tidak berubah.');else toast('Proyek berhasil dimuat.');}
+function loadPresetJPS(text){const rows=JPS.csv(text);if(!rows.length||rows[0][0]!=='JETE Pricetag Studio Design')throw new Error('Preset .jps tidak valid.');const map={};for(const r of rows.slice(1))map[r[0]]=r[1];for(const k in defaults){if(map[k]!==undefined){let v=map[k];if(['widthMm','heightMm','maxProducts','columns','bleed','logoWidthMm','logoXmm','logoYmm','nameSizeOne','nameSizeTwo','descSizeOne','descSizeTwo'].includes(k))v=Number(String(v).replace(',','.'));state.settings[k]=v;}}if(map.bold)state.settings.font=map.bold.replace(/[-_].*$/,'').replace(/([a-z])([A-Z])/g,'$1 $2');state.draft=true;state.logoData=null;state.logoName='';renderAll();toast('Preset .jps dimuat. Logo dan font perlu diperiksa.');}
+async function unzipXlsx(buffer){if(typeof DecompressionStream==='undefined')throw new Error('Browser belum mendukung pembacaan .xlsx offline. Buka Excel dan salin tabel sebagai TSV.');const b=new Uint8Array(buffer),dv=new DataView(buffer);let pos=-1;for(let i=b.length-22;i>=Math.max(0,b.length-65557);i--){if(dv.getUint32(i,true)===0x06054b50){pos=i;break;}}if(pos<0)throw new Error('File XLSX tidak valid (ZIP).');const count=dv.getUint16(pos+10,true);let cd=dv.getUint32(pos+16,true);const entries=new Map(),dec=new TextDecoder();for(let i=0;i<count;i++){if(dv.getUint32(cd,true)!==0x02014b50)throw new Error('Struktur arsip Excel tidak valid.');const method=dv.getUint16(cd+10,true),size=dv.getUint32(cd+20,true),fnLen=dv.getUint16(cd+28,true),extra=dv.getUint16(cd+30,true),comment=dv.getUint16(cd+32,true),at=dv.getUint32(cd+42,true);const name=dec.decode(b.slice(cd+46,cd+46+fnLen));const start=at+30+dv.getUint16(at+26,true)+dv.getUint16(at+28,true);entries.set(name,{method,size,start});cd+=46+fnLen+extra+comment;}
+async function get(name){const en=entries.get(name);if(!en)return null;const bytes=b.slice(en.start,en.start+en.size);if(en.method===0)return dec.decode(bytes);if(en.method===8){const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'));return await new Response(stream).text();}throw new Error('Kompresi Excel tidak didukung: '+en.method);}return {get,entries};}
+function parseSheet(xml,shared){const doc=new DOMParser().parseFromString(xml,'application/xml');const rows=[];for(const r of doc.getElementsByTagNameNS('*','row')){const row=[];for(const c of r.getElementsByTagNameNS('*','c')){const ref=c.getAttribute('r')||'';let col=0;for(const ch of (ref.match(/[A-Z]+/i)||[''])[0].toUpperCase())col=col*26+(ch.charCodeAt(0)-64);const t=c.getAttribute('t'),v=c.getElementsByTagNameNS('*','v')[0]?.textContent||'';let val=v;if(t==='s')val=shared[Number(v)]??'';else if(t==='inlineStr')val=Array.from(c.getElementsByTagNameNS('*','t')).map(x=>x.textContent).join('');else if(t!=='str'&&v!==''&&Number.isFinite(Number(v)))val=Number(v);row[col-1]=val;}if(row.length)rows.push({row:Number(r.getAttribute('r')),values:row});}return rows;}
+async function loadXlsx(file){const zip=await unzipXlsx(await file.arrayBuffer()),sst=await zip.get('xl/sharedStrings.xml');let shared=[];if(sst){const xml=new DOMParser().parseFromString(sst,'application/xml');shared=Array.from(xml.getElementsByTagNameNS('*','si')).map(si=>Array.from(si.getElementsByTagNameNS('*','t')).map(t=>t.textContent).join(''));}const workbook=await zip.get('xl/workbook.xml'),rels=await zip.get('xl/_rels/workbook.xml.rels');const wbXml=new DOMParser().parseFromString(workbook,'application/xml');const relXml=new DOMParser().parseFromString(rels,'application/xml');const rmap={};for(const r of relXml.getElementsByTagNameNS('*','Relationship'))rmap[r.getAttribute('Id')]=r.getAttribute('Target');const sheets={};for(const sh of wbXml.getElementsByTagNameNS('*','sheet')){const name=sh.getAttribute('name'),rid=sh.getAttribute('r:id')||sh.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships','id');let target=rmap[rid];if(!target)continue;target=target.replace(/^\//,'').replace(/^xl\//,'');const xml=await zip.get('xl/'+target);if(xml)sheets[name]=parseSheet(xml,shared);}const keys=Object.keys(sheets);if(!keys.length)throw new Error('Tidak ada worksheet yang dapat dibaca.');const main=sheets.Official||sheets[keys[0]],head=main.find(r=>(r.values||[]).some(x=>['Tipe','Produk','Kategori','Normal'].includes(String(x).trim())));if(!head)throw new Error('Header produk tidak ditemukan di Excel.');const raw=[head.values,...main.filter(r=>r.row>head.row).map(r=>r.values)].map(row=>row.map(v=>String(v??'').replace(/\t/g,' ')).join('\t')).join('\n');const parsed=convertTable(raw);if(sheets.Kelompok&&sheets.Official){const groupMap=new Map();for(const g of sheets.Kelompok){const v=g.values;if(!/^kelompok\s*\d+/i.test(String(v[0]||'')))continue;const range=String(v[3]||'').match(/(\d+)\s*[–-]\s*(\d+)/);if(!range)continue;for(let i=Number(range[1]);i<=Number(range[2]);i++)groupMap.set(i,String(v[0]));}parsed.items.forEach(p=>{const rn=Number(p.source);if(groupMap.has(rn))p.group=groupMap.get(rn);});}return parsed;}
+async function importFile(file){try{if(!file)return;const ext=file.name.toLowerCase().split('.').pop();if(ext==='xlsx'){const res=await loadXlsx(file);applyParsed(res);return;}const raw=await file.text();if(ext==='json'){loadProjectJson(raw);return;}if(ext==='jps'){loadPresetJPS(raw);return;}$('rawInput').value=raw;const first=raw.split('\n')[0].toLowerCase(),tabular=/\b(normal|potongan|festive|promo)\b/.test(first);applyParsed(tabular?convertTable(raw):parseChat(raw));}catch(e){modal('Gagal mengimpor file',e.message);}}
+function setLogo(file){if(!file)return;const reader=new FileReader();reader.onload=()=>{const data=String(reader.result);const temp=new Image();temp.onload=()=>{state.logoData=data;state.logoName=file.name;state.settings.logoAspect=temp.naturalWidth/temp.naturalHeight;state.draft=false;configInput();renderPreview();toast('Logo berhasil dimuat.');};temp.onerror=()=>modal('Logo tidak bisa dibaca','Coba gunakan PNG atau JPG.');temp.src=data;};reader.readAsDataURL(file);}
+function downloadTemplate(){const txt='Grup,Kategori,Produk,Deskripsi,Normal,Store,Festive\nKelompok 1,POWERBANK,B10 10.000mAh,Powerbank 10000 mAh,579900,319900,319900\nKelompok 1,POWERBANK,B11 10.000mAh,Powerbank 10000 mAh,599900,399900,399900\n';downloadBlob('Template_JETE_Pricetag.csv',utfBlob('\ufeff'+txt,'text/csv;charset=utf-8'));}
+function saveQueue(){try{verifyExport(false);downloadBlob('Antrean_JETE_Pricetag.csv',utfBlob(JPS.serialize(state.groups),'text/csv;charset=utf-8'));}catch(e){modal('Belum bisa menyimpan',e.message);}}
+function loadDemo(){const source=[{"title": "POWERBANK", "label": "Kelompok 1", "items": [["A101 — 5.000 mAh", 399900, 199900], ["B10 — 10.000 mAh", 579900, 319900], ["B11 — 10.000 mAh", 599900, 399900], ["B7 — 10.000 mAh", 659900, 369900], ["B7 — 20.000 mAh", 859900, 469900], ["B8 — 10.000 mAh", 659900, 369900], ["B12 — 20.000 mAh", 1099900, 599900], ["B13 — 10.000 mAh", 1139900, 599900], ["C12 — 10.000 mAh", 439900, 269900]]}, {"title": "POWERBANK", "label": "Kelompok 2", "items": [["A12 — 5.000 mAh", 579900, 319900], ["A12 — 10.000 mAh", 739900, 399900], ["A13 — 5.000 mAh", 819900, 449900], ["A15 — 10.000 mAh", 879900, 479900], ["F53 — 10.000 mAh", 999900, 549900]]}, {"title": "CAR-CHARGER", "label": "Kelompok 3", "items": [["J5 — 48W PD", 339900, 199900], ["J6 — 48W PD + LED light", 339900, 199900], ["J7 — 69W PD", 399900, 249900], ["J8 — 66W PD + triple output", 499900, 299900], ["J9 — 84W PD + Retractable Cable", 329900, 199900], ["JX3 — 117W 6 output", 389900, 229900], ["JX5 — 102W + Cigarete", 389900, 249900]]}, {"title": "HOME-CHARGER", "label": "Kelompok 4", "items": [["ATOMIC 2", 59900, 39900], ["C83 — USB + C / Tiny3 C to C", 159900, 99900], ["E11 — Type-C 20W", 229900, 149900], ["E11 — 20W + Tiny3 C to C", 269900, 169900], ["E11 — USB+C 20W", 269900, 169900], ["E11 — 20W USB-C + Tiny3 C to C", 309900, 189900], ["E11 — 35W USB-A + USB-C", 339900, 199900], ["E11 — 45W Type-C", 429900, 249900], ["E11 — USB+2C 65W", 699900, 379900], ["E12 — 70W Retractable", 879900, 499900], ["E12 — 45W Retractable", 679900, 379900], ["E11 — 100W + Kabel C to C", 1249900, 679900]]}, {"title": "TWS", "label": "Kelompok 5", "items": [["CE6", 279900, 149900], ["CE7", 279900, 149900], ["CE8", 279900, 149900], ["CS5", 359900, 199900], ["CS6", 329900, 199900], ["CEG1", 359900, 229900], ["TG101", 439900, 259900], ["FS1 — Karakter", 349900, 199900], ["FS1 — CHOCO DOG", 389900, 219900], ["FS3", 349900, 199900], ["T13", 399900, 249900], ["TS1", 459900, 259900], ["TS2", 629900, 349900], ["TX3 — Support apps", 699900, 399900], ["TX5 — Support apps", 799900, 499900], ["TX6", 799900, 499900]]}, {"title": "STRAP-SMARTWATCH", "label": "Kelompok 6", "items": [["STRAP 01", 119900, 69900], ["STRAP 02", 139900, 79900], ["STRAP 03", 179900, 99900], ["STRAP 05", 239900, 129900], ["STRAP 06", 179900, 109900], ["STRAP 07", 179900, 109900], ["STRAP 08", 179900, 109900], ["STRAP 09", 179900, 109900], ["STRAP 10", 179900, 109900]]}, {"title": "HOME-CHARGER", "label": "Kelompok 7", "items": [["CN5 — 25W", 349900, 199900], ["CN2", 249900, 149900], ["CN3 — 30W", 659900, 359900], ["CN3 — 70W", 1099900, 599900]]}, {"title": "STYLUS-PEN", "label": "Kelompok 8", "items": [["ST1", 89900, 59900], ["ST1B", 159900, 99900], ["ST2 — Universal stylush", 319900, 189900], ["iST3 — Ipad pencil", 489900, 249900], ["ST5", 599900, 349900], ["IST6", 799900, 449900], ["IST7", 799900, 449900]]}, {"title": "EARPHONE-CABLE", "label": "Kelompok 9", "items": [["CLASSIC", 125000, 75000], ["CLASSIC 2 — Type C/Lightning", 150000, 95000], ["CLASSIC 2", 125000, 75000]]}, {"title": "EARPHONE-CABLE", "label": "Kelompok 10", "items": [["HX13 — Type-C", 209900, 119900], ["CLASSIC 3 — Type-C", 150000, 99900], ["CLASSIC 3 — Lightning", 249900, 159900]]}, {"title": "EARPHONE-CABLE", "label": "Kelompok 11", "items": [["HX12 — Jack 3.5mm", 129900, 74900], ["HX12 — Type C", 169900, 99900], ["HX1", 129900, 74900]]}, {"title": "EARPHONE-CABLE", "label": "Kelompok 12", "items": [["CLASSIC", 125000, 75000], ["CLASSIC 2 — Type C/Lightning", 150000, 95000], ["CLASSIC 2", 125000, 75000], ["HX13 — Type-C", 209900, 119900], ["CLASSIC 3 — Type-C", 150000, 99900], ["CLASSIC 3 — Lightning", 249900, 159900], ["HX12 — Jack 3.5mm", 129900, 74900], ["HX12 — Type C", 169900, 99900], ["HX1", 129900, 74900], ["HX15", 249900, 149900]]}];state.groups=source.map(g=>({title:g.title,label:g.label,items:g.items.map((p,i)=>({id:'demo-'+g.label+'-'+i,group:g.label,category:g.title,name:p[0],desc:'',normal:p[1],store:p[2],festive:p[2],note:'Contoh Official',source:''}))}));state.selected=0;state.settings.maxProducts=Math.max(10,...state.groups.map(g=>g.items.length));renderAll();toast('Contoh dari 12 kelompok Official.xlsx dimuat.');}
+function attach(){document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));$('addGroup').onclick=addGroup;$('addProduct').onclick=()=>{let g=selectedGroup();if(!g){addGroup();g=selectedGroup();}g.items.push({id:'new-'+Date.now(),name:'Produk Baru',desc:'',category:g.title,group:g.label,normal:199900,store:149900,festive:149900});renderAll();};$('deleteGroup').onclick=()=>{if(!selectedGroup())return;if(!confirm('Hapus grup '+selectedGroup().title+'?'))return;state.groups.splice(state.selected,1);renderAll();};for(const [id,shift] of [['moveGroupUp',-1],['moveGroupDown',1]])$(id).onclick=()=>{let at=state.selected,to=at+shift;if(to<0||to>=state.groups.length)return;[state.groups[at],state.groups[to]]=[state.groups[to],state.groups[at]];state.selected=to;renderAll();};$('groupTitle').addEventListener('change',e=>{const g=selectedGroup();if(g){g.title=e.target.value.trim()||g.title;renderAll();}});$('parseData').onclick=parseRaw;$('showExample').onclick=loadDemo;$('downloadTemplate').onclick=downloadTemplate;$('inputFile').onchange=e=>importFile(e.target.files[0]);$('projectFile').onchange=e=>importFile(e.target.files[0]);$('logoFile').onchange=e=>setLogo(e.target.files[0]);$('exportSVG').onclick=exportSVG;$('exportPNG').onclick=exportPNG;$('exportZip').onclick=exportZip;$('printPDF').onclick=printPDF;$('saveProject').onclick=saveProject;$('saveProjectTop').onclick=saveProject;$('exportCSV').onclick=saveQueue;$('resetDesign').onclick=()=>{state.settings=Object.assign({},defaults);state.draft=true;configInput();renderPreview();toast('Desain kembali ke default JETE.');};$('draft').onchange=e=>{state.draft=e.target.checked;renderPreview();};$('preset').onchange=e=>{if(e.target.value==='custom')return;const [w,h]=e.target.value.split('x').map(Number);const prior=Math.min(state.settings.widthMm/95,state.settings.heightMm/65),next=Math.min(w/95,h/65),factor=next/prior;for(const k of ['nameSizeOne','descSizeOne','nameSizeTwo','descSizeTwo'])state.settings[k]=Math.max(1,Math.min(300,Number((state.settings[k]*factor).toFixed(2))));state.settings.logoWidthMm=Number((state.settings.logoWidthMm*factor).toFixed(3));state.settings.widthMm=w;state.settings.heightMm=h;configInput();renderPreview();};
+for(const id of ['widthCm','heightCm','columns','maxProducts','price','bleed','logoPosition','logoWidth','logoX','logoY','font','fontDesc','fontPrice','fontHeader','nameSizeOne','nameSizeTwo','descSizeOne','descSizeTwo','footerLeft','footerRight']){const el=$(id);el.addEventListener('change',()=>{updateSetting(id,el.value);if(id==='logoPosition')toggleLogoXY();if(id==='widthCm'||id==='heightCm')$('preset').value='custom';renderPreview();});}
+for(const area of ['rawInput','preview']){const el=$(area);el.addEventListener('dragover',e=>{e.preventDefault();el.classList.add('drag');});el.addEventListener('dragleave',()=>el.classList.remove('drag'));el.addEventListener('drop',e=>{e.preventDefault();el.classList.remove('drag');if(e.dataTransfer.files.length)importFile(e.dataTransfer.files[0]);});}}
+attach();
+for(const id of ['fontFiles','fontFilesModal'])$(id).addEventListener('change',async e=>{await importFontFiles([...e.target.files]);e.target.value='';});
+$('openFontManager').onclick=()=>{$('fontManagerModal').classList.add('on');renderFontLibrary();};
+$('closeFontManager').onclick=()=>$('fontManagerModal').classList.remove('on');
+$('fontManagerModal').addEventListener('click',e=>{if(e.target===$('fontManagerModal'))$('fontManagerModal').classList.remove('on');});
+$('fontSearch').oninput=renderFontLibrary;
+$('fontDrop').addEventListener('dragover',e=>{e.preventDefault();$('fontDrop').classList.add('drag');});
+$('fontDrop').addEventListener('dragleave',()=>$('fontDrop').classList.remove('drag'));
+$('fontDrop').addEventListener('drop',e=>{e.preventDefault();$('fontDrop').classList.remove('drag');importFontFiles([...e.dataTransfer.files]);});
+configInput();loadDemo();restoreFonts();document.fonts?.ready?.then(()=>renderPreview());
+})();
+
+</script></body></html>
